@@ -15,6 +15,7 @@ dist/
 # Skills and local assistant artifacts
 skills/
 skills-lock.json
+AGENTS.md
 *.skill
 *.skills
 SKILL.md
