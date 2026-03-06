@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0e1419" />
+    <title>Calculadora de hora de dormir</title>
+    <meta
+      name="description"
+      content="Calcula a que hora dormirte para despertar manana a la hora deseada."
+    />
+    <meta property="og:title" content="Calculadora de hora de dormir" />
+    <meta
+      property="og:description"
+      content="Introduce tu hora de despertar y cuantas horas quieres dormir."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body data-theme="dark">
+    <main id="main-content" class="container">
+      <h1 id="title">Calculadora de hora de dormir</h1>
+      <p id="intro" class="intro">
+        Elige tu hora de despertar y cuanto quieres dormir para obtener la hora
+        recomendada para acostarte.
+      </p>
+
+      <form class="card" novalidate>
+        <div class="field">
+          <div class="field-label-row">
+            <label id="wake-label" for="wake-time">Hora de despertar</label>
+            <div class="field-actions">
+              <label for="lang-select" class="sr-only">Idioma</label>
+              <select
+                id="lang-select"
+                class="lang-select"
+                aria-label="Idioma"
+                title="Idioma"
+              >
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+              </select>
+              <button
+                id="theme-toggle"
+                type="button"
+                class="theme-toggle-icon"
+                aria-label="Cambiar a modo claro"
+                aria-pressed="false"
+                title="Cambiar tema"
+                data-tooltip="Modo claro"
+              >
+                <span class="theme-icon" aria-hidden="true">☀</span>
+                <span class="sr-only" id="theme-toggle-text">Cambiar a modo claro</span>
+              </button>
+            </div>
+          </div>
+          <input
+            id="wake-time"
+            name="wake-time"
+            type="time"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label id="duration-label" for="sleep-duration">Duracion de sueno (horas)</label>
+          <input
+            id="sleep-duration"
+            name="sleep-duration"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            aria-describedby="duration-help duration-error"
+            placeholder="Ej: 7.5, 7,5, 7:30, 7h 30m…"
+          />
+          <p id="duration-help" class="help">
+            Formatos validos: 7.5, 7,5, 7:30, 7h 30m, 7 horas y media.
+          </p>
+          <p id="duration-error" class="error" role="alert"></p>
+        </div>
+
+        <fieldset class="field">
+          <legend id="shortcuts-legend">Atajos de duracion</legend>
+          <div class="shortcuts">
+            <button type="button" data-duration="4.5">4.5h</button>
+            <button type="button" data-duration="6">6h</button>
+            <button type="button" data-duration="7.5">7.5h</button>
+            <button type="button" data-duration="8">8h</button>
+            <button type="button" data-duration="9">9h</button>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label id="time-format-label" for="time-format">Formato de hora</label>
+          <select id="time-format" name="time-format">
+            <option id="time-format-12" value="12">12h</option>
+            <option id="time-format-24" value="24">24h</option>
+          </select>
+        </div>
+
+        <label class="remember-row" for="remember-toggle">
+          <input id="remember-toggle" name="remember" type="checkbox" />
+          <span id="remember-label">Recordar tus valores</span>
+        </label>
+
+        <div class="actions">
+          <button id="clear-btn" type="button" class="btn-ghost">
+            Limpiar
+          </button>
+        </div>
+      </form>
+
+      <section class="result card">
+        <p id="result-main" class="result-main">
+          Completa los campos para calcular.
+        </p>
+        <p id="result-meta" class="result-meta">
+          Completa la hora de despertar y la duracion para ver la recomendacion.
+        </p>
+        <p id="result-live" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+      </section>
+
+      <footer class="signature-wrap">
+        <a
+          id="signature-link"
+          class="signature-link"
+          href="https://ld9.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Luis Cubero · 2026</a
+        >
+      </footer>
+    </main>
+
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>
