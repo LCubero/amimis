@@ -3,3 +3,18 @@ dist/
 .agents/
 .claude/
 .info/
+
+# AI / Agent / CLI local tooling
+.codex/
+.cursor/
+.mcp/
+.ai/
+.ai-cache/
+.llm/
+
+# Skills and local assistant artifacts
+skills/
+skills-lock.json
+*.skill
+*.skills
+SKILL.md
