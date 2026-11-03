@@ -2,6 +2,8 @@
 
 Calculadora web para estimar a qué hora dormirte según tu hora de despertar y la duración de sueño deseada.
 
+**Pruébala en línea:** <https://ld9.dev/amimis/>
+
 ## Características
 
 - Cálculo inmediato de hora recomendada para dormir.
@@ -140,3 +142,15 @@ npm run build
 Publica el contenido de `dist/` bajo `/amimis/` en tu hosting estático. Para
 servirlo en otra ruta, revisa `base` en `vite.config.ts` y vuelve a compilar.
 No hay un proceso de despliegue automatizado configurado en este repositorio.
+
+## Licencia
+
+[MIT](LICENSE) © 2026 Luis Cubero.
+
+## Capturas
+
+| Móvil, tema claro | Móvil, tema oscuro |
+| --- | --- |
+| <img src="docs/screenshots/mobile-light.png" alt="Amimis en móvil con tema claro" width="300"> | <img src="docs/screenshots/mobile-dark.png" alt="Amimis en móvil con tema oscuro" width="300"> |
+
+![Amimis en escritorio con tema claro](docs/screenshots/desktop-light.png)
