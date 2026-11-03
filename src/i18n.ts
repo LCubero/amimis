@@ -41,23 +41,26 @@ export type AppCopy = {
 
 export const LANGUAGE_STORAGE_KEY = "sleep-calculator:lang-v1";
 
+// Spanish 12h times end in "a. m." / "p. m.", so avoid a doubled period.
+const endSentence = (text: string): string => (text.endsWith(".") ? text : `${text}.`);
+
 const COPY: Record<Language, AppCopy> = {
   es: {
     title: "Calculadora de hora de dormir",
     description:
-      "Calcula a que hora dormirte para despertar manana a la hora deseada.",
+      "Calcula a qué hora dormirte para despertar mañana a la hora deseada.",
     ogDescription:
-      "Introduce tu hora de despertar y cuantas horas quieres dormir.",
+      "Introduce tu hora de despertar y cuántas horas quieres dormir.",
     intro:
-      "Elige tu hora de despertar y cuanto quieres dormir para obtener la hora recomendada para acostarte.",
+      "Elige tu hora de despertar y cuánto quieres dormir para obtener la hora recomendada para acostarte.",
     wakeLabel: "Hora de despertar",
-    wakeHelp: "Usa 24 horas (07:30) o AM/PM (7:30 AM). Puedes borrar cada caracter.",
+    wakeHelp: "Usa 24 horas (07:30) o AM/PM (7:30 AM). Puedes borrar cada carácter.",
     optionsLabel: "Opciones",
     languageLabel: "Idioma",
-    durationLabel: "Duracion de sueno (horas)",
+    durationLabel: "Duración de sueño (horas)",
     durationPlaceholder: "Ej: 7.5, 7,5, 7:30, 7h 30m...",
     durationHelp: "Ej.: 7.5, 7:30 o 7h 30m.",
-    shortcutsLegend: "Atajos de duracion",
+    shortcutsLegend: "Atajos de duración",
     formatLabel: "Formato de hora",
     format12: "12h",
     format24: "24h",
@@ -65,26 +68,26 @@ const COPY: Record<Language, AppCopy> = {
     clearButton: "Limpiar",
     resultPromptMain: "Completa los campos para calcular.",
     resultPromptMeta:
-      "Completa la hora de despertar y la duracion para ver la recomendacion.",
-    invalidWakeMain: "Hora invalida.",
+      "Completa la hora de despertar y la duración para ver la recomendación.",
+    invalidWakeMain: "Hora inválida.",
     invalidWakeMeta:
-      "Corrige la hora de despertar para poder calcular la recomendacion.",
-    invalidDurationMain: "Duracion invalida.",
+      "Corrige la hora de despertar para poder calcular la recomendación.",
+    invalidDurationMain: "Duración inválida.",
     invalidDurationMeta:
-      "Corrige la duracion para calcular la hora recomendada para dormir.",
-    resultMain: (bedtimeText) => `Duermete a las ${bedtimeText}.`,
+      "Corrige la duración para calcular la hora recomendada para dormir.",
+    resultMain: (bedtimeText) => endSentence(`Duérmete a las ${bedtimeText}`),
     resultMeta: ({ normalized, bedtimeText, relativeLabel, wakeText }) =>
-      `Si quieres dormir ${normalized}, debes dormirte a las ${bedtimeText} ${relativeLabel} para levantarte manana a las ${wakeText}.`,
+      endSentence(`Si quieres dormir ${normalized}, debes dormirte a las ${bedtimeText} ${relativeLabel} para levantarte mañana a las ${wakeText}`),
     clearConfirm:
-      "Se limpiaran los valores guardados y el resultado. ¿Quieres continuar?",
+      "Se limpiarán los valores guardados y el resultado. ¿Quieres continuar?",
     themeToLight: "Cambiar a modo claro",
     themeToDark: "Cambiar a modo oscuro",
     themeTooltipLight: "Modo claro",
     themeTooltipDark: "Modo oscuro",
     durationMessages: {
-      required: "Introduce una duracion de sueno.",
-      invalidFormat: "Formato invalido. Usa por ejemplo 7.5, 7:30 o 7h 30m.",
-      range: "La duracion debe estar entre 0.25h y 12h.",
+      required: "Introduce una duración de sueño.",
+      invalidFormat: "Formato inválido. Usa por ejemplo 7.5, 7:30 o 7h 30m.",
+      range: "La duración debe estar entre 0.25h y 12h.",
     },
   },
   en: {

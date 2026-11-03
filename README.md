@@ -102,7 +102,8 @@ limpieza y reapertura de pestañas sin recordar el formulario. Mide el contraste
 de textos y placeholders (mínimo 4,5:1), así como de bordes de controles y foco
 (mínimo 3:1), incluidos los estados seleccionado, hover y error en ambos temas.
 `tests/mobile-editing.js` prueba Backspace carácter por carácter, horas de 12/24 h,
-validación y compatibilidad con URL/datos guardados. Comprueba que el resultado
+validación, compatibilidad con URL/datos guardados y textos en español con tildes
+y sin punto duplicado tras «p. m.». Comprueba que el resultado
 quede dentro de la pantalla, con una tarjeta de hasta 180 px y texto principal
 de 18–22 px, en 320×667, 375×812 y 390×844, en ES/EN y ambos temas. Las opciones
 secundarias están contraídas; al desplegarlas puede ser necesario desplazarse.

@@ -14,9 +14,9 @@ export type DurationParseResult =
   | { ok: false; error: string };
 
 const DEFAULT_DURATION_MESSAGES: DurationMessages = {
-  required: "Introduce una duracion de sueno.",
-  invalidFormat: "Formato invalido. Usa por ejemplo 7.5, 7:30 o 7h 30m.",
-  range: "La duracion debe estar entre 0.25h y 12h.",
+  required: "Introduce una duración de sueño.",
+  invalidFormat: "Formato inválido. Usa por ejemplo 7.5, 7:30 o 7h 30m.",
+  range: "La duración debe estar entre 0.25h y 12h.",
 };
 
 function normalizeMinutes(totalMinutes: number): number {
@@ -166,5 +166,5 @@ export function labelRelativeDay(crossesMidnight: boolean, language: Language): 
   if (language === "en") {
     return crossesMidnight ? "tonight" : "tomorrow";
   }
-  return crossesMidnight ? "esta noche" : "manana";
+  return crossesMidnight ? "esta noche" : "mañana";
 }
