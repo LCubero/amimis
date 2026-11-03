@@ -122,16 +122,11 @@ y el [estado actual](docs/repo-harness/current-state.md). La
 
 Después de instalar o actualizar las skills, ejecuta `/reload` en Pi. Para
 comprobar las copias y su manifiesto: `python -B .repo-harness/check.py`.
-La licencia MIT corresponde solo a las skills generadas; la licencia de Amimis
-no se ha modificado. Las memorias, sesiones y capturas no se versionan.
+Las memorias, sesiones y capturas de prueba no se versionan.
 
 **Tema oscuro inesperado:** si el modo claro se ve oscuro, revisa extensiones
 como Dark Reader o el modo oscuro forzado del navegador. Un reporte anterior se
 debía a esa extensión, no a la app.
-
-**Dependencias pendientes:** la instalación limpia de esta preparación detectó
-6 vulnerabilidades en el lockfile existente (1 baja y 5 altas). No se ejecutó
-`npm audit fix` ni se cambiaron las versiones; requieren revisión aparte.
 
 ## Deploy
 
