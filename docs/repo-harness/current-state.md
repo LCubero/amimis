@@ -23,12 +23,13 @@ Este archivo proyecta hechos y registros del propietario canónico:
 - Base visual y funcional publicada previamente en `main`, hasta `ebedf49`:
   resultado móvil compacto, hora editable, contraste y pruebas de navegador.
 - `RH-W-0001`: cerrado; el tema oscuro tras F5 lo causaba la extensión Dark Reader del usuario.
+- `RH-W-0002`: avisos de dependencias corregidos en el lockfile; 0 vulnerabilidades y pruebas correctas.
 - `RH-W-0003`: harness instalado, integrado y guardado localmente; comprobaciones y verificación independiente correctas. La revisión nativa no se realizó por límite de contexto.
 
 ## Trabajo pendiente
 <!-- doc-role:pending-work -->
 
-- `RH-W-0002`: revisión de avisos de dependencias propuesta como trabajo separado.
+Ninguno registrado. El despliegue y la APK esperan indicaciones del usuario.
 
 Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 

@@ -18,24 +18,26 @@ no trivial con IDs inmutables `RH-W-####`; el estado actual es solo su proyecci�
 ## Registros activos
 <!-- doc-role:active-records -->
 
+Ninguno.
+
+## Registros resueltos
+<!-- doc-role:resolved-records -->
+
 ### RH-W-0002
 
 **Tema:** revisar avisos de dependencias del lockfile.
 
-Estado: `proposed`
+Estado: `completed`
 
-- **Prioridad:** P1, por cinco avisos de severidad alta observados en la instalación limpia previa.
+- **Prioridad:** P1, por cinco avisos de severidad alta.
 - **Origen:** `npm ci` informó seis vulnerabilidades: una baja y cinco altas.
-- **Dependencias:** una revisión separada y autorizada de los avisos concretos; los detalles y su aplicabilidad actual aún no están determinados.
-- **Completado:** registro del aviso, build y tipos correctos con el lockfile existente. No se cambiaron dependencias ni se ejecutó `npm audit fix`.
-- **Restante:** revalidar los avisos, evaluar su impacto y proponer una actualización con sus pruebas.
-- **Adiciones / exclusiones:** trabajo de seguridad separado; esta instalación no es una actualización de dependencias. Aplazamientos y rechazos adicionales: ninguno.
-- **Evidencia:** [package-lock.json](../../package-lock.json) y [registro de preparación](../harness-readiness.md).
-- **Historial:** retenido como pendiente, sin ampliar el alcance aprobado del harness ni afirmar que la app publicada sea vulnerable a un aviso no analizado.
-- **Condición del siguiente avance:** autorización del usuario para revisar y proponer la actualización.
-
-## Registros resueltos
-<!-- doc-role:resolved-records -->
+- **Dependencias:** ninguna.
+- **Completado:** el 2026-11-04 `npm audit` confirmó los avisos en Vite 7.3.1, postcss y source-map-js (servidor de desarrollo y source maps). `npm audit fix` actualizó solo el lockfile, dentro de los rangos de `package.json` (Vite 7.3.7, postcss 8.5.32, source-map-js 1.2.2). `npm audit`: 0 vulnerabilidades; tipos, build y las cuatro pruebas de navegador pasan.
+- **Restante:** `none`.
+- **Adiciones / exclusiones:** sin saltos de versión mayor (Vite 8 y TypeScript 7 quedan fuera). Aplazamientos y rechazos adicionales: ninguno.
+- **Evidencia:** [package-lock.json](../../package-lock.json) y [registro técnico](../../odd/tasks/public-release.md).
+- **Historial:** propuesto durante la instalación del harness; autorizado por el usuario: «0002 eso hazlo».
+- **Condición del siguiente avance:** `none`.
 
 ### RH-W-0001
 

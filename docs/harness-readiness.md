@@ -100,6 +100,9 @@ scripts de instalación y no se modificaron `package.json` ni `package-lock.json
 Los avisos necesitan revisión separada; no presentar esta preparación como una
 actualización de seguridad.
 
+**Resuelto (2026-11-04):** `RH-W-0002` actualizó el lockfile (Vite 7.3.7);
+`npm audit` informa 0 vulnerabilidades.
+
 ## Aplicación posterior del builder
 
 Se inspeccionó inicialmente `repo-harness-builder` **3.2.0** en el portfolio de
