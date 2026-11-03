@@ -10,7 +10,7 @@ Este archivo registra los cambios completados en orden cronológico.
 - Se cerró `RH-W-0002`: el lockfile pasa a Vite 7.3.7 y dependencias corregidas; `npm audit` sin vulnerabilidades.
 - Se corrigieron tildes y eñes en los textos en español y el punto duplicado tras «a. m.»/«p. m.» en el resultado.
 - El repositorio pasó a ser público en GitHub con licencia MIT, README actualizado.
-- Se retiraron las capturas del README a petición del usuario.
+- El README muestra dos capturas en tema oscuro: móvil y escritorio.
 
 ## 2026-11-03
 
