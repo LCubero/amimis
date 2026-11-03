@@ -50,24 +50,22 @@ Estado: `proposed`
 - **Historial:** retenido como pendiente, sin ampliar el alcance aprobado del harness ni afirmar que la app publicada sea vulnerable a un aviso no analizado.
 - **Condición del siguiente avance:** autorización del usuario para revisar y proponer la actualización.
 
+## Registros resueltos
+<!-- doc-role:resolved-records -->
+
 ### RH-W-0003
 
 **Tema:** instalar e integrar el harness de Amimis.
 
-Estado: `active`
+Estado: `completed`
 
 - **Prioridad:** P2, solicitud explícita de continuidad y documentación del repositorio.
 - **Origen:** entrevista del builder y aprobación «dale» del plan y complementos.
 - **Dependencias:** ninguna; perfiles, idioma, licencia de skills, contribución y seguimiento fueron resueltos por el usuario.
 - **Completado:** apply `VALIDATED`, integración y exclusiones comprobadas; checker y check del builder `current`, self-test integrado `pass`, tipos/build correctos y verificación independiente S1–S7 aprobada. La app no cambió.
-- **Restante:** guardar y cerrar la unidad local con las comprobaciones disponibles.
+- **Restante:** `none`. Instalación local guardada en el commit `7fa4a3d92ae81cedabff9d9937e871a1213d4df4`.
 - **Limitación explícita:** la revisión nativa no pudo iniciarse por `lens_context_budget_exceeded`; no creó autoridad ni emitió veredicto. No se presenta como aprobada ni rechazada por el usuario; tampoco se altera el modo RDD.
 - **Adiciones / exclusiones:** Pi, documentación española y MIT solo para skills; sin CONTRIBUTING, cambios de app, anuncios, empaquetado móvil, upgrades ni publicación remota. Aplazamientos y rechazos adicionales: ninguno.
 - **Evidencia:** [registro técnico](../../odd/tasks/repo-harness.md), `REPO-HARNESS.md`, manifiesto y checker locales.
 - **Historial:** preservado el README existente; el generador aplicó 43 creaciones y dos ampliaciones sin reemplazos ni migraciones. El versionado y la integración manual fueron aprobados aparte del digest.
-- **Condición del siguiente avance:** unidad local guardada y registro de cierre actualizado. No iniciar cadenas, repetir el candidato, truncar evidencia ni asumir que el usuario ha rechazado la revisión.
-
-## Registros resueltos
-<!-- doc-role:resolved-records -->
-
-La instalación termina su cierre local; los dos pendientes de producto permanecen abiertos.
+- **Condición del siguiente avance:** `none` para esta instalación. Cargar el harness en el proceso de Pi requiere `/reload`; cualquier nueva revisión o publicación es una operación separada.

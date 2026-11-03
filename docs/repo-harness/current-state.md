@@ -10,8 +10,9 @@ temas claro/oscuro y base de despliegue `/amimis/`. Uso y pruebas de la app:
 [README](../../README.md). La instalación del harness para Pi recibió `VALIDATED`;
 checker, check del builder, self-test, tipos/build y verificación independiente
 pasaron, junto con la lectura final del responsable de la instalación.
-`RH-W-0003` termina su cierre local. La revisión nativa excedió su presupuesto
-antes de crear autoridad: no hay veredicto nativo y esa limitación se conserva.
+`RH-W-0003` está completado localmente en el commit `7fa4a3d`. La revisión
+nativa excedió su presupuesto antes de crear autoridad: no hay veredicto nativo
+y esa limitación se conserva.
 
 Este archivo proyecta hechos y registros del propietario canónico:
 [roadmap.md](roadmap.md). No mantiene un segundo backlog.
@@ -21,21 +22,20 @@ Este archivo proyecta hechos y registros del propietario canónico:
 
 - Base visual y funcional publicada previamente en `main`, hasta `ebedf49`:
   resultado móvil compacto, hora editable, contraste y pruebas de navegador.
-- Aplicado e integrado el plan aprobado del harness, con comprobaciones locales e independientes correctas; revisión nativa y cierre pendientes.
+- `RH-W-0003`: harness instalado, integrado y guardado localmente; comprobaciones y verificación independiente correctas. La revisión nativa no se realizó por límite de contexto.
 
 ## Trabajo pendiente
 <!-- doc-role:pending-work -->
 
 - `RH-W-0001`: diagnóstico bloqueado por falta del entorno del usuario para el tema tras F5.
 - `RH-W-0002`: revisión de avisos de dependencias propuesta como trabajo separado.
-- `RH-W-0003`: cierre local en curso, conservando el límite de revisión nativa.
 
 Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 
 ## Siguiente paso
 <!-- doc-role:next-step -->
 
-Guardar el cierre local de `RH-W-0003` sin más rondas ni cadenas de revisión.
-La limitación nativa no se convierte en una aprobación ni en un rechazo atribuido al usuario.
-Para cargar las skills y prompts instalados en Pi hace falta `/reload`; el
+Ejecutar `/reload` en Pi para cargar las skills y prompts instalados. El
 checker prueba archivos, no el contenido cacheado de un proceso activo.
+Después, el usuario puede priorizar los pendientes de producto de la hoja de ruta.
+No se convierte la limitación nativa en una aprobación ni en un rechazo del usuario.

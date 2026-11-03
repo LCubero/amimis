@@ -16,9 +16,9 @@ Branch: `feat/repo-harness`; delivery: ask-on-risk, one coherent local work unit
 
 ## Tasks
 
-- T1 [S1-S7] route=inline status=done commit=pending — Apply returned VALIDATED, exit 0, exact approved digest; 43 creations and 2 appends observed.
-- T2 [S2,S4-S7] route=inline status=done commit=pending — Git visibility/privacy matrix, human-document links, app-source invariance, and diff check passed (exit 0).
-- T3 [S1-S8] route=inline+independent-verifier status=in_progress commit=pending — Checks, independent verification and final parent source review passed. Native START was unavailable, not approved or declined. Close the ordinary local unit with that limitation recorded; no review chains, retries or push.
+- T1 [S1-S7] route=inline status=done commit=7fa4a3d92ae81cedabff9d9937e871a1213d4df4 — Apply returned VALIDATED, exit 0, exact approved digest; 43 creations and 2 appends observed.
+- T2 [S2,S4-S7] route=inline status=done commit=7fa4a3d92ae81cedabff9d9937e871a1213d4df4 — Git visibility/privacy matrix, human-document links, app-source invariance, and diff check passed (exit 0).
+- T3 [S1-S8] route=inline+independent-verifier status=done commit=7fa4a3d92ae81cedabff9d9937e871a1213d4df4 — Checks, independent verification and final parent source review passed. Native START was unavailable, not approved or declined. Local installation unit committed; native limitation recorded, no review chains, retries or push.
 
 ## Log
 
@@ -37,3 +37,4 @@ L12 — No user disposition explicitly left target sha256:b6eb332bc4bb80872c0861
 L13 — 2026-11-03 user correction, verbatim: "no lo compliques si". No commit chain, extra verifier or repeated native attempt will be started. Request only the disposition needed to close with the native limitation; this correction itself is not an explicit decision to leave a candidate unreviewed.
 L14 — 2026-11-03 user correction, verbatim: "Tu eres quien puede leer todo y el repo y toda la doc y asegurarte no? mientras leas, revises y te asegures, revisa y recuerda sin sobreingenieria, exagerar o complicarlo, recuerda el alma y norte del proyecto". Keep the sleep calculator mobile-first and simple; the harness supports the app, not the reverse. Retain existing evidence, no new verification rounds or unrelated reads. The native limitation does not represent a defect in app functionality.
 L15 — The user repeated the L14 direction. Parent read the checker, path/authentication guards, repair-only process boundary, project entry points and constraints. All functional and independent evidence remains valid. Correct the unnecessary procedural loop: installation closure and its ordinary local commit do not claim native approval or fabricate user decline. Preserve the failed-start limitation explicitly; do not retry review, truncate evidence, alter RDD mode, start commit-review chains, or expand the app. The normal local work-unit commit is already authorized by the active development policy; no remote publication is included.
+L16 — Local installation unit committed as 7fa4a3d92ae81cedabff9d9937e871a1213d4df4 (feat(harness): install versioned Pi repository harness). Final structural checks remained current and app inputs unchanged. S1-S8 are satisfied within the stated functional scope; native review remains not performed, with no approval, user decline, authority, receipt, repair or mode change asserted. Only the closure evidence is recorded afterward; no remote push.
