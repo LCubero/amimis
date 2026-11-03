@@ -116,10 +116,14 @@ Estas comprobaciones específicas no sustituyen una auditoría completa de acces
 
 ## Estado y siguiente paso
 
-La base funcional y visual está documentada en
-[preparación del harness](docs/harness-readiness.md). El builder **todavía no se
-ha aplicado** a Amimis; sus perfiles, licencia y plan de cambios requieren las
-decisiones y la aprobación de su propio flujo.
+El harness está instalado para Pi. Consulta la [guía de uso](docs/repo-harness/usage.md)
+y el [estado actual](docs/repo-harness/current-state.md). La
+[preparación original](docs/harness-readiness.md) conserva la evidencia previa.
+
+Después de instalar o actualizar las skills, ejecuta `/reload` en Pi. Para
+comprobar las copias y su manifiesto: `python -B .repo-harness/check.py`.
+La licencia MIT corresponde solo a las skills generadas; la licencia de Amimis
+no se ha modificado. Las memorias, sesiones y capturas no se versionan.
 
 **Pendiente conocido:** se reportó modo claro con apariencia oscura después de
 F5. No se reprodujo en Chromium limpio con preferencia de sistema clara ni

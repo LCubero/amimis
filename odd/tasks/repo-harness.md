@@ -1,0 +1,39 @@
+# Repository harness installation
+Install the approved Pi harness and integrate its human documentation without changing the app.
+Branch: `feat/repo-harness`; delivery: ask-on-risk, one coherent local work unit; forecast ~300 authored lines excluding generated files; checks: builder self-test, builder check, generated checker, Git/links, independent verification.
+
+## Specs
+
+- S1 — User request: "y si revisas la skill tu y analizas y ya sabes que hacer. y obvio me haces las preguntas". Use the inspected local builder and the resolved interview, not inferred defaults for human choices.
+- S2 — Documentation choice: "español". Human harness documentation is Spanish; technical artifacts remain English.
+- S3 — Runtime choice: "pi". Include only Pi projections.
+- S4 — License answer: "ok lo que sea mejor si". This answered the proposal to use MIT only for generated harness skills, leaving the app license unchanged.
+- S5 — Contribution answer: "no de momento no quiero contribuciones". Do not create CONTRIBUTING.md.
+- S6 — Tracking choice: "versionado". Version harness sources and Pi projections, retaining private memory/session/browser/generated-output exclusions.
+- S7 — Apply approval: "dale". This approves builder plan `b0679587f75c70dba68f80bc80bb24385873a35fc06b039ab790b37a3dc12f47` (43 creates, 2 appends, 0 replacements/migrations) and the disclosed manual Git/documentation integration. Preserve the existing README and known theme/dependency findings. Do not modify app runtime code or its license.
+
+- S8 — Scope correction: "no lo compliques si". Keep the closure minimal; do not start commit chains or additional review rounds without a specific human decision.
+
+## Tasks
+
+- T1 [S1-S7] route=inline status=done commit=pending — Apply returned VALIDATED, exit 0, exact approved digest; 43 creations and 2 appends observed.
+- T2 [S2,S4-S7] route=inline status=done commit=pending — Git visibility/privacy matrix, human-document links, app-source invariance, and diff check passed (exit 0).
+- T3 [S1-S8] route=inline+independent-verifier status=in_progress commit=pending — Checks, independent verification and final parent source review passed. Native START was unavailable, not approved or declined. Close the ordinary local unit with that limitation recorded; no review chains, retries or push.
+
+## Log
+
+L1 — Original request: "y si revisas la skill tu y analizas y ya sabes que hacer. y obvio me haces las preguntas".
+L2 — User answers, verbatim and in order: "español"; "pi"; "ok lo que sea mejor si"; "no de momento no quiero contribuciones"; "versionado"; "dale".
+L3 — Approved CLI activation is maintenance: no strict builder token domain was invoked or shown. Use the approved digest without manufacturing an APROBAR token. Integrated mode is the documented new-installation default; Gentle AI 4.3.1 and native Pi Engram were independently verified. The app license and source are outside this change.
+L4 — Baseline `ebedf49adb6e801e6161c0849f6dd76f7a893be2`; clean main synchronized before work. Fresh read-only preview returned the exact approved digest, writes=0 and blocked=[]. Created feature branch `feat/repo-harness` before source writes.
+L5 — No meaningful test-first RED for installing an unchanged generator package. The preview proves absence and the checks after apply will prove its emitted contracts. Do not run the builder development suite; only the integrated-mode self-test and consumer checks apply.
+L6 — Risk: item 2 (generated checker authenticates its manifest and guards filesystem containment); independent verification follows writer checks. No push, store packaging, ads, dependency upgrade, or app license selection belongs to this installation.
+L7 — T1 complete: maintenance apply exited 0 with status VALIDATED and approved digest unchanged. The builder reported exactly the planned 43 creates and 2 appends, with no replace/migrate actions. Consumer validation and manual integration remain pending at this checkpoint.
+L8 — T2 complete: approved Git exceptions expose only the harness and its Pi projections, not the separately installed builder or private state. Human-owned docs now use real Amimis facts and retain the F5/dependency findings in the canonical roadmap. Parent probe exited 0: 39 shared operational paths visible to Git, local-state exclusions correct, human Markdown targets resolve, git diff --check clean, and no app/config/tests/license inputs changed from baseline.
+L9 — Parent verification job-20 exited 0. Parsed reports: generated checker current/writes=0; builder check current/writes=0 with no missing/drift/locale findings; integrated-mode self-test pass/check=current, confined to .repo-harness/tmp. npm typecheck/build and diff check passed. Application browser tests are not rerun: app code/config/tests are unchanged from baseline and its existing functional evidence is retained.
+L10 — Native assess reported high/process_boundary in .repo-harness/check.py, reviewDue=true/high_risk; escalation item 2 also required an independent verifier. No push is in scope.
+L11 — Independent task mw0xk43u-2-1a36 returned PASS for S1-S7, with no candidate-caused blockers. Real and isolated checkers were current/exit0/writes0; a modified manifest, changed Pi skill and directory projection were each rejected with exit1, without checker-induced fixture changes. Canonical/Pi peers and private-state exclusions matched. Elevated junction/symlink, race, repair-apply and live-agent cache behavior were not tested. Parent repeated the real checker: current/exit0/writes0.
+L12 — No user disposition explicitly left target sha256:b6eb332bc4bb80872c086130c80b7cc5114fa533e472e4bf51940ed45f16cfb9 unreviewed. Inspect offered START for it; START returned lens_context_budget_exceeded, preflight/not_started, mutation_performed=false and next_action=stop. Native states no review authority was created; do not use the reported failed-start lineage for status, reset, recovery or abandon, and do not retry the same candidate or truncate evidence. T3 is blocked pending a human decision to split the installation into smaller commit candidates and review those scopes. The documentation update records this stop, not a native verdict or approval.
+L13 — 2026-11-03 user correction, verbatim: "no lo compliques si". No commit chain, extra verifier or repeated native attempt will be started. Request only the disposition needed to close with the native limitation; this correction itself is not an explicit decision to leave a candidate unreviewed.
+L14 — 2026-11-03 user correction, verbatim: "Tu eres quien puede leer todo y el repo y toda la doc y asegurarte no? mientras leas, revises y te asegures, revisa y recuerda sin sobreingenieria, exagerar o complicarlo, recuerda el alma y norte del proyecto". Keep the sleep calculator mobile-first and simple; the harness supports the app, not the reverse. Retain existing evidence, no new verification rounds or unrelated reads. The native limitation does not represent a defect in app functionality.
+L15 — The user repeated the L14 direction. Parent read the checker, path/authentication guards, repair-only process boundary, project entry points and constraints. All functional and independent evidence remains valid. Correct the unnecessary procedural loop: installation closure and its ordinary local commit do not claim native approval or fabricate user decline. Preserve the failed-start limitation explicitly; do not retry review, truncate evidence, alter RDD mode, start commit-review chains, or expand the app. The normal local work-unit commit is already authorized by the active development policy; no remote publication is included.

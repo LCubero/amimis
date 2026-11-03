@@ -1,8 +1,9 @@
 # Preparación de repo-harness-builder
 
-Amimis tiene una base funcional y visual comprobada. Este documento prepara una
-instalación futura del harness: **no es un harness generado, una instalación ni
-un plan de aplicación aprobado**.
+Esta preparación se conserva como referencia histórica de la base de Amimis.
+El plan del harness fue aplicado después de la entrevista y aprobación del
+usuario. El estado vigente pertenece a [estado actual](repo-harness/current-state.md)
+y los pendientes a la [hoja de ruta](repo-harness/roadmap.md), no a este registro.
 
 ## Base del proyecto
 
@@ -31,9 +32,10 @@ un plan de aplicación aprobado**.
 - `vite.config.ts`: base `/amimis/` y puerto 4173. No sustituirlo por un servidor
   estático directo sobre los archivos TypeScript.
 
-`AGENTS.md` existe como instrucción **local ignorada por Git**. La política del
-repositorio también excluye skills y artefactos del asistente. No forzar su
-publicación ni reemplazarlos silenciosamente al preparar el harness.
+Durante la preparación, `AGENTS.md` y las carpetas `skills/` estaban ignorados.
+El usuario autorizó después versionar solo la entrada, las skills del harness
+y sus proyecciones Pi. Las excepciones acotadas conservan privados otros
+artefactos; su razón y alcance están en [decisiones](repo-harness/decisions.md).
 
 ## Contrato visual y de entrada
 
@@ -72,14 +74,14 @@ Como referencia de la corrección móvil: a 375 × 812, el resultado pasó de un
 La prueba fija límites, no coordenadas exactas: tarjeta de hasta 180 px, título
 de 18–22 px y resultado visible en 320 × 667, 375 × 812 y 390 × 844, ES/EN y ambos temas.
 
-## Pendiente abierto
+## Evidencia del pendiente de tema
 
-**El fallo de apariencia clara tras F5 reportado por el usuario no está resuelto.**
-En Chromium limpio, con ambas preferencias del sistema, se conservaron selección
-y colores calculados correctos. Falta identificar navegador, versión y ajustes
-relevantes para reproducir la captura. No atribuirlo a una extensión sin evidencia.
-No cambiar persistencia ni declarar el problema cerrado solo porque el atributo
-`data-theme` diga `light`.
+La captura del usuario mostró apariencia oscura después de seleccionar claro y
+recargar. Chromium limpio conservó selección y colores correctos con ambas
+preferencias del sistema; no reprodujo esa captura. No atribuirla a una extensión
+sin evidencia ni darla por resuelta por un atributo `data-theme` correcto.
+El estado y la siguiente condición pertenecen ahora a `RH-W-0001` en la
+[hoja de ruta](repo-harness/roadmap.md).
 
 ## Entorno y dependencias pendientes
 
@@ -95,35 +97,27 @@ scripts de instalación y no se modificaron `package.json` ni `package-lock.json
 Los avisos necesitan revisión separada; no presentar esta preparación como una
 actualización de seguridad.
 
-## Preparación del builder
+## Aplicación posterior del builder
 
-Se inspeccionó una copia de referencia de `repo-harness-builder` **3.2.0** en
-`ld9_dev_portfolio`. Sus archivos generados son específicos de ese proyecto y no
-se copiaron. Amimis todavía no tiene `.repo-harness/manifest.json`, checker ni
-`REPO-HARNESS.md`; no se ha ejecutado render, apply o check del builder aquí.
+Se inspeccionó inicialmente `repo-harness-builder` **3.2.0** en el portfolio de
+referencia. Después se verificó la copia local de Amimis y se ejecutó aquí su
+plan aprobado, sin copiar archivos generados de otro proyecto. El apply informó
+`VALIDATED`, 43 creaciones y dos ampliaciones, sin reemplazos ni migraciones.
 
-Antes de aplicar:
+La entrevista y sus selecciones viven en [decisiones](repo-harness/decisions.md).
+Las comprobaciones y el cierre de la instalación se registran en `RH-W-0003` de
+la [hoja de ruta](repo-harness/roadmap.md) y en el registro técnico ODD enlazado
+por el mapa de documentación. No se presume una validación por el mero hecho de
+que existan los archivos; la guía de uso explica qué prueba cada checker.
 
-1. Hacer disponible una copia confiable de la skill y seleccionar explícitamente
-   este repositorio. No usar otro proyecto como destino de la instalación.
-2. Auditar y proponer integración de la documentación existente; este README y
-   este documento son contenido humano, no archivos generados reemplazables.
-3. Resolver los perfiles de runtime y los idiomas de documentación. La sesión
-   actual usa Pi y el README está en español, pero eso no selecciona perfiles ni
-   idiomas del futuro harness en nombre del usuario.
-4. Resolver la licencia: no hay licencia de proyecto declarada. Decidir también
-   si se necesita una guía de contribución; no crear ninguna por suposición.
-5. Revisar la política de `AGENTS.md` y de las proyecciones de skills ignoradas.
-   Cualquier cambio de seguimiento debe estar incluido en el plan aprobado.
-6. Mostrar los cuatro conjuntos de acciones del builder y el digest vigente.
-   Aplicar solo tras la aprobación propia de ese plan y ejecutar su validación.
-
-La preparación documental y el commit/push actuales **no aprueban** la futura
-instalación, elecciones del builder ni su plan de cambios.
+La aprobación del plan no otorga autoridad para publicidad, empaquetado móvil,
+cambios de licencia de producto ni publicación remota.
 
 ## Archivos que no deben publicarse
 
 `node_modules/`, `dist/`, `export/`, `.engram/`, `.ldout/` y `.playwright-cli/`
 son dependencias, salidas generadas o estado local. Se mantienen fuera de Git,
-sin borrar los archivos del usuario. Solo se comparte la configuración de
-Playwright y los scripts de prueba, no perfiles, sesiones ni capturas.
+sin borrar los archivos del usuario. El estado local del harness bajo `.repo-harness/tmp/`, `archive/`, `state/` y
+`memory-bk/` también está excluido. Se comparten la configuración de Playwright,
+las pruebas y las fuentes del harness, no perfiles, sesiones, preferencias ni
+capturas.

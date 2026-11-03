@@ -30,3 +30,21 @@ AGENTS.md
 *.skill
 *.skills
 SKILL.md
+.codegraph/
+/.repo-harness/tmp/
+/.repo-harness/archive/
+/.repo-harness/state/
+/.repo-harness/memory-bk/
+
+# Share only the approved harness and its Pi projections.
+!/AGENTS.md
+!/.repo-harness/skills/
+!/.repo-harness/skills/**
+!/.pi/skills/
+/.pi/skills/*
+!/.pi/skills/repo-harness-session-start/
+!/.pi/skills/repo-harness-session-start/**
+!/.pi/skills/repo-harness-session-stop/
+!/.pi/skills/repo-harness-session-stop/**
+!/.pi/skills/repo-harness-documentation/
+!/.pi/skills/repo-harness-documentation/**
