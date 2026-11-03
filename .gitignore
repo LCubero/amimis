@@ -1,5 +1,16 @@
 node_modules/
 dist/
+export/
+
+# Local memory, diagnostic exports, and browser evidence
+.engram/
+.ldout/
+.playwright-cli/
+
+# Keep the project browser config even when a global ignore excludes Playwright.
+!.playwright/
+.playwright/*
+!.playwright/cli.config.json
 .agents/
 .claude/
 .info/
