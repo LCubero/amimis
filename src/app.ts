@@ -2,6 +2,7 @@ import {
   computeBedtime,
   formatTime,
   labelRelativeDay,
+  normalizeWakeTime,
   parseDuration,
   type Language,
 } from "./time";
@@ -131,6 +132,8 @@ function applyStaticCopy(): void {
   queryRequired<HTMLElement>("#title").textContent = copy.title;
   queryRequired<HTMLElement>("#intro").textContent = copy.intro;
   queryRequired<HTMLElement>("#wake-label").textContent = copy.wakeLabel;
+  queryRequired<HTMLElement>("#wake-help").textContent = copy.wakeHelp;
+  queryRequired<HTMLElement>("#options-label").textContent = copy.optionsLabel;
   queryRequired<HTMLElement>("#duration-label").textContent = copy.durationLabel;
   durationInput.placeholder = copy.durationPlaceholder;
   queryRequired<HTMLElement>("#duration-help").textContent = copy.durationHelp;
@@ -178,7 +181,7 @@ function getCurrentTheme(): Theme {
 function persistFormIfEnabled(): void {
   saveFormState({
     remember: rememberToggle.checked,
-    wake: wakeInput.value,
+    wake: normalizeWakeTime(wakeInput.value) ?? "",
     sleep: durationInput.value.trim(),
     fmt: formatSelect.value === "24" ? "24" : "12",
   });
@@ -247,7 +250,8 @@ function updateUrlParams(wake: string, sleep: string, fmt: TimeFormat): void {
 
 function render({ announce = false }: { announce?: boolean } = {}): void {
   const copy = getCopy(currentLanguage);
-  const wakeValue = wakeInput.value;
+  const wakeValue = normalizeWakeTime(wakeInput.value) ?? "";
+  const hasWakeInput = Boolean(wakeInput.value.trim());
   const durationValue = durationInput.value.trim();
   const use12h = formatSelect.value === "12";
   const fmt: TimeFormat = use12h ? "12" : "24";
@@ -257,14 +261,14 @@ function render({ announce = false }: { announce?: boolean } = {}): void {
   setDurationValidity(false);
   updateShortcutSelection(durationValue);
 
-  if (!wakeValue || !durationValue) {
+  if (!hasWakeInput || !durationValue) {
     setResult(copy.resultPromptMain, copy.resultPromptMeta, announce);
     updateUrlParams(wakeValue, durationValue, fmt);
     persistFormIfEnabled();
     return;
   }
 
-  if (!validWakeTime(wakeValue)) {
+  if (!wakeValue) {
     setWakeValidity(true);
     setResult(copy.invalidWakeMain, copy.invalidWakeMeta, announce);
     updateUrlParams(wakeValue, durationValue, fmt);

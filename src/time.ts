@@ -110,6 +110,22 @@ export function parseDuration(
   return { ok: true, minutes, normalized: durationMinutesToLabel(minutes) };
 }
 
+export function normalizeWakeTime(input: string): string | null {
+  const match = /^(\d{1,2}):([0-5]\d)(?:\s*(am|pm))?$/i.exec(input.trim());
+  if (!match) return null;
+
+  let hours = Number(match[1]);
+  const period = match[3]?.toLowerCase();
+  if (period) {
+    if (hours < 1 || hours > 12) return null;
+    hours = (hours % 12) + (period === "pm" ? 12 : 0);
+  } else if (hours > 23) {
+    return null;
+  }
+
+  return `${String(hours).padStart(2, "0")}:${match[2]}`;
+}
+
 export function computeBedtime(
   wakeTime: string,
   durationMinutes: number,

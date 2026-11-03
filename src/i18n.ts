@@ -6,6 +6,8 @@ export type AppCopy = {
   ogDescription: string;
   intro: string;
   wakeLabel: string;
+  wakeHelp: string;
+  optionsLabel: string;
   languageLabel: string;
   durationLabel: string;
   durationPlaceholder: string;
@@ -49,10 +51,12 @@ const COPY: Record<Language, AppCopy> = {
     intro:
       "Elige tu hora de despertar y cuanto quieres dormir para obtener la hora recomendada para acostarte.",
     wakeLabel: "Hora de despertar",
+    wakeHelp: "Usa 24 horas (07:30) o AM/PM (7:30 AM). Puedes borrar cada caracter.",
+    optionsLabel: "Opciones",
     languageLabel: "Idioma",
     durationLabel: "Duracion de sueno (horas)",
     durationPlaceholder: "Ej: 7.5, 7,5, 7:30, 7h 30m...",
-    durationHelp: "Formatos validos: 7.5, 7,5, 7:30, 7h 30m, 7 horas y media.",
+    durationHelp: "Ej.: 7.5, 7:30 o 7h 30m.",
     shortcutsLegend: "Atajos de duracion",
     formatLabel: "Formato de hora",
     format12: "12h",
@@ -91,10 +95,12 @@ const COPY: Record<Language, AppCopy> = {
     intro:
       "Choose your wake-up time and sleep duration to get a recommended bedtime.",
     wakeLabel: "Wake-up time",
+    wakeHelp: "Use 24-hour time (07:30) or AM/PM (7:30 AM). Each character can be deleted.",
+    optionsLabel: "Options",
     languageLabel: "Language",
     durationLabel: "Sleep duration (hours)",
     durationPlaceholder: "Ex: 7.5, 7:30, 7h 30m...",
-    durationHelp: "Valid formats: 7.5, 7:30, 7h 30m, 7 hours and a half.",
+    durationHelp: "E.g. 7.5, 7:30 or 7h 30m.",
     shortcutsLegend: "Duration shortcuts",
     formatLabel: "Time format",
     format12: "12h",
