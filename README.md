@@ -146,11 +146,3 @@ No hay un proceso de despliegue automatizado configurado en este repositorio.
 ## Licencia
 
 [MIT](LICENSE) © 2026 Luis Cubero.
-
-## Capturas
-
-| Móvil, tema claro | Móvil, tema oscuro |
-| --- | --- |
-| <img src="docs/screenshots/mobile-light.png" alt="Amimis en móvil con tema claro" width="300"> | <img src="docs/screenshots/mobile-dark.png" alt="Amimis en móvil con tema oscuro" width="300"> |
-
-![Amimis en escritorio con tema claro](docs/screenshots/desktop-light.png)

@@ -38,3 +38,4 @@ L5 — T3: 12 commits scanned; no tokens, keys or .env. Historic .agents/.claude
 L6 — User approved the Spanish copy fix: "dale dale".
 L7 — Independent verifier PASS for S1, S2, S4, S5, S6, S10; native review review-a3d3b10d4905e77c (readability, reliability) approved and acknowledged.
 L8 — User approved publication: "dale". main fast-forwarded to ab48696, pushed, and LCubero/amimis set to PUBLIC; GitHub detects the MIT license.
+L9 — User correction, verbatim: "mejor sin capturas de pantalla". Screenshots removed from README and docs/screenshots/; they remain in Git history.
