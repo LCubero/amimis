@@ -4,17 +4,14 @@
 
 Este archivo registra los cambios completados en orden cronológico.
 
-## 2026-11-04
+## 2026-11-03
 
+- Se instaló el harness para Pi, con documentación humana en español y MIT solo para las skills generadas.
+- Se habilitó su versionado acotado, manteniendo locales las memorias, preferencias, sesiones y capturas.
+- Se integraron las instrucciones de Amimis y sus pendientes conocidos sin modificar el código ni la licencia de la app.
 - Se cerró `RH-W-0001`: el tema oscuro tras F5 lo causaba la extensión Dark Reader, no la app.
 - Se cerró `RH-W-0002`: el lockfile pasa a Vite 7.3.7 y dependencias corregidas; `npm audit` sin vulnerabilidades.
 - Se corrigieron tildes y eñes en los textos en español y el punto duplicado tras «a. m.»/«p. m.» en el resultado.
 - El repositorio pasó a ser público en GitHub con licencia MIT, README actualizado.
 - El README muestra dos capturas en tema oscuro: móvil y escritorio.
 - Se desplegó la versión actual en https://ld9.dev/amimis/.
-
-## 2026-11-03
-
-- Se instaló el harness para Pi, con documentación humana en español y MIT solo para las skills generadas.
-- Se habilitó su versionado acotado, manteniendo locales las memorias, preferencias, sesiones y capturas.
-- Se integraron las instrucciones de Amimis y sus pendientes conocidos sin modificar el código ni la licencia de la app.

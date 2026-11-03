@@ -38,4 +38,5 @@ Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 
 El repositorio es público en GitHub con licencia MIT
 ([registro técnico](../../odd/tasks/public-release.md)). La página en línea
-<https://ld9.dev/amimis/> sirve la versión actual. Siguiente: estudiar la APK.
+<https://ld9.dev/amimis/> sirve la versión actual. Siguiente, cuando el usuario
+lo pida: pulir detalles de botones e iconos y estudiar la APK.

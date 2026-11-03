@@ -83,7 +83,7 @@ sin evidencia ni darla por resuelta por un atributo `data-theme` correcto.
 El estado y la siguiente condición pertenecen ahora a `RH-W-0001` en la
 [hoja de ruta](repo-harness/roadmap.md).
 
-**Resuelto (2026-11-04):** el usuario confirmó que la causa era su extensión
+**Resuelto (2026-11-03):** el usuario confirmó que la causa era su extensión
 Dark Reader; la app no tenía defecto.
 
 ## Entorno y dependencias pendientes
@@ -100,7 +100,7 @@ scripts de instalación y no se modificaron `package.json` ni `package-lock.json
 Los avisos necesitan revisión separada; no presentar esta preparación como una
 actualización de seguridad.
 
-**Resuelto (2026-11-04):** `RH-W-0002` actualizó el lockfile (Vite 7.3.7);
+**Resuelto (2026-11-03):** `RH-W-0002` actualizó el lockfile (Vite 7.3.7);
 `npm audit` informa 0 vulnerabilidades.
 
 ## Aplicación posterior del builder

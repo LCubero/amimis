@@ -32,7 +32,7 @@ Estado: `completed`
 - **Prioridad:** P1, por cinco avisos de severidad alta.
 - **Origen:** `npm ci` informó seis vulnerabilidades: una baja y cinco altas.
 - **Dependencias:** ninguna.
-- **Completado:** el 2026-11-04 `npm audit` confirmó los avisos en Vite 7.3.1, postcss y source-map-js (servidor de desarrollo y source maps). `npm audit fix` actualizó solo el lockfile, dentro de los rangos de `package.json` (Vite 7.3.7, postcss 8.5.32, source-map-js 1.2.2). `npm audit`: 0 vulnerabilidades; tipos, build y las cuatro pruebas de navegador pasan.
+- **Completado:** el 2026-11-03 `npm audit` confirmó los avisos en Vite 7.3.1, postcss y source-map-js (servidor de desarrollo y source maps). `npm audit fix` actualizó solo el lockfile, dentro de los rangos de `package.json` (Vite 7.3.7, postcss 8.5.32, source-map-js 1.2.2). `npm audit`: 0 vulnerabilidades; tipos, build y las cuatro pruebas de navegador pasan.
 - **Restante:** `none`.
 - **Adiciones / exclusiones:** sin saltos de versión mayor (Vite 8 y TypeScript 7 quedan fuera). Aplazamientos y rechazos adicionales: ninguno.
 - **Evidencia:** [package-lock.json](../../package-lock.json) y [registro técnico](../../odd/tasks/public-release.md).
@@ -48,7 +48,7 @@ Estado: `completed`
 - **Prioridad:** P2, porque la apariencia reportada contradecía la selección de tema.
 - **Origen:** reporte del usuario: «si pongo el claro y doy f5 se rompe el theme».
 - **Dependencias:** ninguna.
-- **Completado:** Chromium limpio no reprodujo el fallo. El 2026-11-04 el usuario identificó la causa: «era mi extension de darkreader. solucionado». La extensión Dark Reader reescribía los estilos; la app no tenía defecto.
+- **Completado:** Chromium limpio no reprodujo el fallo. El 2026-11-03 el usuario identificó la causa: «era mi extension de darkreader. solucionado». La extensión Dark Reader reescribía los estilos; la app no tenía defecto.
 - **Restante:** `none`.
 - **Adiciones / exclusiones:** sin cambios de código ni de persistencia. Aplazamientos y rechazos adicionales: ninguno.
 - **Evidencia:** [prueba de paletas](../../tests/theme-reload.js) y confirmación del usuario.
