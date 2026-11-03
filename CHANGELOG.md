@@ -11,6 +11,7 @@ Este archivo registra los cambios completados en orden cronológico.
 - Se corrigieron tildes y eñes en los textos en español y el punto duplicado tras «a. m.»/«p. m.» en el resultado.
 - El repositorio pasó a ser público en GitHub con licencia MIT, README actualizado.
 - El README muestra dos capturas en tema oscuro: móvil y escritorio.
+- Se desplegó la versión actual en https://ld9.dev/amimis/.
 
 ## 2026-11-03
 

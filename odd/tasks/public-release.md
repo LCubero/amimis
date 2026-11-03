@@ -24,7 +24,7 @@ Branch: `chore/public-release` from `6ab4428`; small reviewable commits; push, v
 - T5 [S4,S5] route=inline status=done commit=a85d2e3 — Refresh the README and add screenshots.
 - T9 [S10] route=inline status=done commit=97dc6d7 — RED observed (Duermete/manana/p. m..), GREEN after fix; all four browser scripts pass.
 - T6 [S7] route=user-gate status=done commit=ab48696 — Push and make the repository public after explicit confirmation.
-- T7 [S8] route=deferred status=pending commit= — Deploy once the user provides the steps.
+- T7 [S8] route=user-gate status=done commit=5d1bade — Deploy once the user provides the steps.
 - T8 [S9] route=deferred status=pending commit= — APK exploration later.
 
 ## Log
@@ -40,3 +40,4 @@ L7 — Independent verifier PASS for S1, S2, S4, S5, S6, S10; native review revi
 L8 — User approved publication: "dale". main fast-forwarded to ab48696, pushed, and LCubero/amimis set to PUBLIC; GitHub detects the MIT license.
 L9 — User correction, verbatim: "mejor sin capturas de pantalla". Screenshots removed from README and docs/screenshots/; they remain in Git history.
 L10 — User correction, verbatim: "o o solo 2 , ambas en modo oscuro 1 mobile 1 normal". README now shows mobile-dark and desktop-dark screenshots.
+L11 — Deploy approved: "si dale de momento está aceptable". Local skill amimis-deploy deployed 5d1bade to ld9.dev/amimis; verify: /amimis/ 200, /amimis 301, root 200, assets 200 and matching dist; live browser console without errors. Server backup kept; misVPS docs are updated by the owner/misVPS.

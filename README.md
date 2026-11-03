@@ -141,7 +141,8 @@ npm run build
 
 Publica el contenido de `dist/` bajo `/amimis/` en tu hosting estático. Para
 servirlo en otra ruta, revisa `base` en `vite.config.ts` y vuelve a compilar.
-No hay un proceso de despliegue automatizado configurado en este repositorio.
+La versión en línea se publica en <https://ld9.dev/amimis/> con un procedimiento
+local del autor; este repositorio no incluye despliegue automatizado.
 
 ## Licencia
 
