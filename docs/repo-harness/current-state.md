@@ -36,6 +36,7 @@ Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 ## Siguiente paso
 <!-- doc-role:next-step -->
 
-Preparación de la publicación en curso en la rama `chore/public-release`
-([registro técnico](../../odd/tasks/public-release.md)). El despliegue y la APK
-quedan para después, cuando el usuario indique los pasos.
+El repositorio es público en GitHub con licencia MIT
+([registro técnico](../../odd/tasks/public-release.md)). Pendiente: actualizar
+la página en línea cuando el usuario indique el proceso de despliegue; después,
+estudiar la APK.

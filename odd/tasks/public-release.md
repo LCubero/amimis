@@ -23,7 +23,7 @@ Branch: `chore/public-release` from `6ab4428`; small reviewable commits; push, v
 - T4 [S4,S6] route=inline status=done commit=e7a6dc4 — Add the MIT LICENSE and update the license references.
 - T5 [S4,S5] route=inline status=done commit=a85d2e3 — Refresh the README and add screenshots.
 - T9 [S10] route=inline status=done commit=97dc6d7 — RED observed (Duermete/manana/p. m..), GREEN after fix; all four browser scripts pass.
-- T6 [S7] route=user-gate status=pending commit= — Push and make the repository public after explicit confirmation.
+- T6 [S7] route=user-gate status=done commit=ab48696 — Push and make the repository public after explicit confirmation.
 - T7 [S8] route=deferred status=pending commit= — Deploy once the user provides the steps.
 - T8 [S9] route=deferred status=pending commit= — APK exploration later.
 
@@ -36,3 +36,5 @@ L3 — Evidence: GitHub repo LCubero/amimis is PRIVATE with homepage https://ld9
 L4 — T2: npm audit fix changed only package-lock.json (vite 7.3.7, postcss 8.5.32, source-map-js 1.2.2); audit 0 vulnerabilities; typecheck, build and the four browser scripts PASS. First background run hung because the wait loop polled 127.0.0.1 while Vite listened on localhost (::1); stopped and rerun bounded.
 L5 — T3: 12 commits scanned; no tokens, keys or .env. Historic .agents/.claude third-party skills and a harmless .claude/settings.local.json were removed in 3b67f51; no history rewrite needed.
 L6 — User approved the Spanish copy fix: "dale dale".
+L7 — Independent verifier PASS for S1, S2, S4, S5, S6, S10; native review review-a3d3b10d4905e77c (readability, reliability) approved and acknowledged.
+L8 — User approved publication: "dale". main fast-forwarded to ab48696, pushed, and LCubero/amimis set to PUBLIC; GitHub detects the MIT license.
