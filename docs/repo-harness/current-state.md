@@ -22,12 +22,12 @@ Este archivo proyecta hechos y registros del propietario canónico:
 
 - Base visual y funcional publicada previamente en `main`, hasta `ebedf49`:
   resultado móvil compacto, hora editable, contraste y pruebas de navegador.
+- `RH-W-0001`: cerrado; el tema oscuro tras F5 lo causaba la extensión Dark Reader del usuario.
 - `RH-W-0003`: harness instalado, integrado y guardado localmente; comprobaciones y verificación independiente correctas. La revisión nativa no se realizó por límite de contexto.
 
 ## Trabajo pendiente
 <!-- doc-role:pending-work -->
 
-- `RH-W-0001`: diagnóstico bloqueado por falta del entorno del usuario para el tema tras F5.
 - `RH-W-0002`: revisión de avisos de dependencias propuesta como trabajo separado.
 
 Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
@@ -35,7 +35,6 @@ Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 ## Siguiente paso
 <!-- doc-role:next-step -->
 
-Ejecutar `/reload` en Pi para cargar las skills y prompts instalados. El
-checker prueba archivos, no el contenido cacheado de un proceso activo.
-Después, el usuario puede priorizar los pendientes de producto de la hoja de ruta.
-No se convierte la limitación nativa en una aprobación ni en un rechazo del usuario.
+Preparación de la publicación en curso en la rama `chore/public-release`
+([registro técnico](../../odd/tasks/public-release.md)). El despliegue y la APK
+quedan para después, cuando el usuario indique los pasos.

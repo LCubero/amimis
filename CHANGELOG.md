@@ -4,6 +4,10 @@
 
 Este archivo registra los cambios completados en orden cronológico.
 
+## 2026-11-04
+
+- Se cerró `RH-W-0001`: el tema oscuro tras F5 lo causaba la extensión Dark Reader, no la app.
+
 ## 2026-11-03
 
 - Se instaló el harness para Pi, con documentación humana en español y MIT solo para las skills generadas.

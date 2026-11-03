@@ -53,10 +53,10 @@ This `AGENTS.md`, the canonical harness, and its Pi projections are versioned.
 Keep memory, preferences, session state, browser evidence, and the separately
 installed builder package local; never force-add private state.
 
-## Known Issue
-The user reported a light theme rendered dark after F5. Clean Chromium did not
-reproduce it. The user's browser/settings still need identification. Do not call
-it fixed based only on stored preferences or `data-theme` attributes.
+## Theme Reports
+A past report of the light theme rendering dark after F5 was caused by the
+user's Dark Reader extension, not the app. For new theme reports, check browser
+extensions and forced dark modes before changing theme code.
 
 ## Git and Local Data
 - Use focused Conventional Commits; include relevant tests and documentation.

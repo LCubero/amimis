@@ -83,6 +83,9 @@ sin evidencia ni darla por resuelta por un atributo `data-theme` correcto.
 El estado y la siguiente condición pertenecen ahora a `RH-W-0001` en la
 [hoja de ruta](repo-harness/roadmap.md).
 
+**Resuelto (2026-11-04):** el usuario confirmó que la causa era su extensión
+Dark Reader; la app no tenía defecto.
+
 ## Entorno y dependencias pendientes
 
 La instalación limpia con `npm ci`, tipos y build se comprobaron usando el

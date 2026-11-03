@@ -125,10 +125,9 @@ comprobar las copias y su manifiesto: `python -B .repo-harness/check.py`.
 La licencia MIT corresponde solo a las skills generadas; la licencia de Amimis
 no se ha modificado. Las memorias, sesiones y capturas no se versionan.
 
-**Pendiente conocido:** se reportó modo claro con apariencia oscura después de
-F5. No se reprodujo en Chromium limpio con preferencia de sistema clara ni
-oscura. Hace falta conocer el navegador y su configuración/extensiones para
-reproducir la captura; no se da por solucionado.
+**Tema oscuro inesperado:** si el modo claro se ve oscuro, revisa extensiones
+como Dark Reader o el modo oscuro forzado del navegador. Un reporte anterior se
+debía a esa extensión, no a la app.
 
 **Dependencias pendientes:** la instalación limpia de esta preparación detectó
 6 vulnerabilidades en el lockfile existente (1 baja y 5 altas). No se ejecutó

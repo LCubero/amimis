@@ -18,22 +18,6 @@ no trivial con IDs inmutables `RH-W-####`; el estado actual es solo su proyecci�
 ## Registros activos
 <!-- doc-role:active-records -->
 
-### RH-W-0001
-
-**Tema:** apariencia del tema claro después de F5.
-
-Estado: `blocked`
-
-- **Prioridad:** P2, porque la apariencia reportada contradice la selección de tema.
-- **Origen:** reporte del usuario: «si pongo el claro y doy f5 se rompe el theme».
-- **Dependencias / bloqueo:** falta conocer el navegador, su versión y ajustes relevantes del entorno donde apareció la captura.
-- **Completado:** comprobadas selección y paletas antes/después de recargar en Chromium limpio, con sistema claro y oscuro. Esa prueba no reprodujo la captura del usuario.
-- **Restante:** obtener el entorno, reproducir el fallo y corregirlo solo con evidencia.
-- **Adiciones / exclusiones:** diagnóstico pendiente; no se cambia persistencia ni se atribuye el efecto a una extensión por suposición. Aplazamientos y rechazos adicionales: ninguno.
-- **Evidencia:** [prueba de paletas](../../tests/theme-reload.js), reporte conservado en la preparación y [README](../../README.md).
-- **Historial:** se mantiene abierto durante la instalación del harness; no se declara resuelto por un atributo `data-theme` correcto.
-- **Condición del siguiente avance:** el usuario identifica el navegador y los ajustes necesarios para intentar reproducir su captura.
-
 ### RH-W-0002
 
 **Tema:** revisar avisos de dependencias del lockfile.
@@ -52,6 +36,22 @@ Estado: `proposed`
 
 ## Registros resueltos
 <!-- doc-role:resolved-records -->
+
+### RH-W-0001
+
+**Tema:** apariencia del tema claro después de F5.
+
+Estado: `completed`
+
+- **Prioridad:** P2, porque la apariencia reportada contradecía la selección de tema.
+- **Origen:** reporte del usuario: «si pongo el claro y doy f5 se rompe el theme».
+- **Dependencias:** ninguna.
+- **Completado:** Chromium limpio no reprodujo el fallo. El 2026-11-04 el usuario identificó la causa: «era mi extension de darkreader. solucionado». La extensión Dark Reader reescribía los estilos; la app no tenía defecto.
+- **Restante:** `none`.
+- **Adiciones / exclusiones:** sin cambios de código ni de persistencia. Aplazamientos y rechazos adicionales: ninguno.
+- **Evidencia:** [prueba de paletas](../../tests/theme-reload.js) y confirmación del usuario.
+- **Historial:** bloqueado durante la instalación del harness hasta conocer el entorno del usuario; cerrado con su confirmación.
+- **Condición del siguiente avance:** `none`.
 
 ### RH-W-0003
 
