@@ -6,6 +6,8 @@ export type AppCopy = {
   ogDescription: string;
   intro: string;
   wakeLabel: string;
+  wakePickerLabel: string;
+  wakeOptionsLabel: string;
   wakeHelp: string;
   optionsLabel: string;
   languageLabel: string;
@@ -54,6 +56,8 @@ const COPY: Record<Language, AppCopy> = {
     intro:
       "Elige tu hora de despertar y cuánto quieres dormir para obtener la hora recomendada para acostarte.",
     wakeLabel: "Hora de despertar",
+    wakePickerLabel: "Elegir hora de la lista",
+    wakeOptionsLabel: "Horas sugeridas",
     wakeHelp: "Usa 24 horas (07:30) o AM/PM (7:30 AM). Puedes borrar cada carácter.",
     optionsLabel: "Opciones",
     languageLabel: "Idioma",
@@ -98,6 +102,8 @@ const COPY: Record<Language, AppCopy> = {
     intro:
       "Choose your wake-up time and sleep duration to get a recommended bedtime.",
     wakeLabel: "Wake-up time",
+    wakePickerLabel: "Choose time from list",
+    wakeOptionsLabel: "Suggested times",
     wakeHelp: "Use 24-hour time (07:30) or AM/PM (7:30 AM). Each character can be deleted.",
     optionsLabel: "Options",
     languageLabel: "Language",

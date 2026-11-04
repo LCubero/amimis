@@ -23,6 +23,22 @@ Ninguno.
 ## Registros resueltos
 <!-- doc-role:resolved-records -->
 
+### RH-W-0005
+
+**Tema:** elegir la hora de despertar con mouse o toque, sin perder la escritura.
+
+Estado: `completed`
+
+- **Prioridad:** P2, pedido del usuario: «xq en pc al seleccionar la hora no sale algo para seleccionar la hora, es decir me gusta poder hacerlo escribiendo pero tmb algo para mouse no, como en tactil».
+- **Origen:** investigación del 2026-11-04. El selector nativo `type="time"` no abre en Firefox de escritorio ni, en la práctica, en Safari de Mac; `showPicker()` no funciona con hora en iOS; su ventana no admite los colores del tema. USWDS usa un campo editable con lista desplegable (patrón combobox de WAI-ARIA). El usuario eligió esa opción con 15 minutos entre sugerencias: «dale».
+- **Dependencias:** ninguna.
+- **Completado:** investigación y decisión. El 2026-11-04: botón de reloj dentro del campo, lista de 96 horas cada 15 minutos con el formato 12/24 y el idioma elegidos, teclado (flechas, Enter, Esc, Tab) y cierre al tocar fuera. Tras elegir con el dedo el foco va al botón para no abrir el teclado del celular. Nueva prueba `tests/wake-picker.js`; las cinco pruebas de navegador, tipos y build pasan.
+- **Restante:** `none`.
+- **Adiciones / exclusiones:** la escritura libre se mantiene, incluidos minutos sueltos; URL y almacenamiento siguen en `HH:mm`. Sin dependencias nuevas. Aplazamientos y rechazos adicionales: ninguno.
+- **Evidencia:** [USWDS time picker](https://designsystem.digital.gov/components/time-picker/), [patrón combobox](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/), [MDN showPicker](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/showPicker).
+- **Historial:** registrado el 2026-11-04; el usuario lo revisó en local y lo aprobó: «me gusta».
+- **Condición del siguiente avance:** `none`. Limitación: no se probó con lectores de pantalla reales (NVDA, VoiceOver, TalkBack) ni con el teclado de un celular físico. Publicar en ld9.dev es una operación aparte.
+
 ### RH-W-0004
 
 **Tema:** pulir botones e iconos de la interfaz.

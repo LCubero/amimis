@@ -18,6 +18,8 @@ Calculadora web para estimar a qué hora dormirte según tu hora de despertar y 
 - UI responsive para escritorio y móvil; en móvil el resultado es compacto y no incluye la ilustración.
 - Hora de despertar editable carácter por carácter: `07:30`, `7:30 AM` o `7:30 PM`.
   El cálculo y los enlaces guardan la hora normalizada en formato de 24 horas.
+  El botón de reloj ofrece sugerencias cada 15 minutos sin limitar la escritura.
+  Desde el campo, ↓ abre la lista; ↑/↓ recorren las horas, Enter elige y Esc o Tab cierran sin cambiar el valor.
 - «Opciones» despliega el formato de salida, «Recordar tus valores» y «Limpiar».
 
 ## Stack
@@ -89,6 +91,7 @@ playwright-cli -s=amimis run-code --filename=tests/visual-checks.js
 playwright-cli -s=amimis run-code --filename=tests/preferences-contrast.js
 playwright-cli -s=amimis run-code --filename=tests/mobile-editing.js
 playwright-cli -s=amimis run-code --filename=tests/theme-reload.js
+playwright-cli -s=amimis run-code --filename=tests/wake-picker.js
 playwright-cli -s=amimis close
 ```
 
@@ -114,6 +117,10 @@ secundarias están contraídas; al desplegarlas puede ser necesario desplazarse.
 y tarjeta con la paleta seleccionada antes y después de recargar, con ambas
 preferencias del sistema. Usa Chromium limpio: no cubre extensiones que
 reescriban estilos ni el oscurecimiento forzado de otros navegadores.
+
+`tests/wake-picker.js` comprueba las 96 sugerencias, selección con mouse y teclado,
+cierre sin cambios, escritura libre, URL, traducciones, formato y ausencia de
+desbordamiento en ambos temas a 320 px.
 
 Estas comprobaciones específicas no sustituyen una auditoría completa de accesibilidad.
 

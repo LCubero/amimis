@@ -35,6 +35,66 @@ function queryRequired<T extends Element>(selector: string): T {
 }
 
 const wakeInput = queryRequired<HTMLInputElement>("#wake-time");
+const wakePickerToggle = queryRequired<HTMLButtonElement>("#wake-picker-toggle");
+const wakeOptions = queryRequired<HTMLUListElement>("#wake-options");
+const wakePicker = queryRequired<HTMLElement>(".wake-picker");
+const wakeSlots = Array.from({ length: 96 }, (_, index) => {
+  const minutes = index * 15;
+  const value = `${String(Math.floor(minutes / 60)).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}`;
+  const option = document.createElement("li");
+  option.id = `wake-option-${value.replace(":", "")}`;
+  option.dataset.value = value;
+  option.setAttribute("role", "option");
+  wakeOptions.append(option);
+  return option;
+});
+let activeWakeSlot = 28;
+
+function refreshWakeOptions(): void {
+  const copy = getCopy(currentLanguage);
+  wakePickerToggle.setAttribute("aria-label", copy.wakePickerLabel);
+  wakeOptions.setAttribute("aria-label", copy.wakeOptionsLabel);
+  const value = normalizeWakeTime(wakeInput.value);
+  wakeSlots.forEach((option, index) => {
+    option.textContent = formatTime(index * 15, formatSelect.value === "12", currentLanguage);
+    option.setAttribute("aria-selected", String(option.dataset.value === value));
+  });
+}
+
+function activateWakeSlot(index: number): void {
+  wakeSlots[activeWakeSlot].classList.remove("is-active");
+  activeWakeSlot = Math.max(0, Math.min(95, index));
+  const option = wakeSlots[activeWakeSlot];
+  option.classList.add("is-active");
+  wakeInput.setAttribute("aria-activedescendant", option.id);
+  option.scrollIntoView({ block: "nearest" });
+}
+
+function closeWakePicker(): void {
+  wakeOptions.hidden = true;
+  wakeInput.setAttribute("aria-expanded", "false");
+  wakePickerToggle.setAttribute("aria-expanded", "false");
+  wakeInput.removeAttribute("aria-activedescendant");
+}
+
+function openWakePicker(): void {
+  refreshWakeOptions();
+  wakeOptions.hidden = false;
+  wakeInput.setAttribute("aria-expanded", "true");
+  wakePickerToggle.setAttribute("aria-expanded", "true");
+  const value = normalizeWakeTime(wakeInput.value);
+  const minutes = value ? Number(value.slice(0, 2)) * 60 + Number(value.slice(3)) : 420;
+  activateWakeSlot(Math.floor(minutes / 15));
+}
+
+function selectWakeSlot(index: number, pointer: boolean): void {
+  wakeInput.value = wakeSlots[index].dataset.value!;
+  wakeInput.dispatchEvent(new Event("change", { bubbles: true }));
+  closeWakePicker();
+  if (pointer) wakePickerToggle.focus();
+  else wakeInput.focus();
+}
+
 const durationInput = queryRequired<HTMLInputElement>("#sleep-duration");
 const formatSelect = queryRequired<HTMLSelectElement>("#time-format");
 const langToggle = queryRequired<HTMLElement>("#lang-toggle");
@@ -151,6 +211,7 @@ function applyStaticCopy(): void {
     button.setAttribute("aria-pressed", button.dataset.lang === currentLanguage ? "true" : "false");
   });
 
+  refreshWakeOptions();
   setTheme(getCurrentTheme());
 }
 
@@ -316,6 +377,7 @@ function render({ announce = false }: { announce?: boolean } = {}): void {
 
 function clearUiState(): void {
   const copy = getCopy(currentLanguage);
+  closeWakePicker();
   wakeInput.value = "";
   durationInput.value = "";
   formatSelect.value = "12";
@@ -386,13 +448,43 @@ function initializeFromUrl(): void {
 }
 
 function setupEvents(): void {
-  wakeInput.addEventListener("input", () => render());
+  wakePickerToggle.addEventListener("click", () => {
+    if (wakeOptions.hidden) openWakePicker();
+    else closeWakePicker();
+  });
+  wakeOptions.addEventListener("pointerdown", (event) => event.preventDefault());
+  wakeSlots.forEach((option, index) => {
+    option.addEventListener("click", () => selectWakeSlot(index, true));
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (event.target instanceof Node && !wakePicker.contains(event.target)) closeWakePicker();
+  });
+  wakeInput.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown" || (event.key === "ArrowUp" && !wakeOptions.hidden)) {
+      event.preventDefault();
+      if (wakeOptions.hidden) openWakePicker();
+      else activateWakeSlot(activeWakeSlot + (event.key === "ArrowDown" ? 1 : -1));
+    } else if (!wakeOptions.hidden && event.key === "Enter") {
+      event.preventDefault();
+      selectWakeSlot(activeWakeSlot, false);
+    } else if (!wakeOptions.hidden && (event.key === "Escape" || event.key === "Tab")) {
+      if (event.key === "Escape") event.preventDefault();
+      closeWakePicker();
+    }
+  });
+  wakeInput.addEventListener("input", () => {
+    render();
+    refreshWakeOptions();
+  });
   wakeInput.addEventListener("change", () => render({ announce: true }));
 
   durationInput.addEventListener("input", () => render());
   durationInput.addEventListener("change", () => render({ announce: true }));
 
-  formatSelect.addEventListener("change", () => render({ announce: true }));
+  formatSelect.addEventListener("change", () => {
+    refreshWakeOptions();
+    render({ announce: true });
+  });
 
   languageButtons.forEach((button) => {
     button.addEventListener("click", () => {

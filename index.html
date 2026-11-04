@@ -73,7 +73,13 @@
         <form class="card" novalidate>
           <div class="field">
             <label id="wake-label" for="wake-time">Hora de despertar</label>
+            <div class="wake-picker">
             <input
+              role="combobox"
+              aria-autocomplete="none"
+              aria-haspopup="listbox"
+              aria-controls="wake-options"
+              aria-expanded="false"
               id="wake-time"
               name="wake-time"
               type="text"
@@ -84,6 +90,11 @@
               aria-describedby="wake-help"
               required
             />
+            <button id="wake-picker-toggle" type="button" tabindex="-1" aria-label="Elegir hora de la lista" aria-controls="wake-options" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" /><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </button>
+            <ul id="wake-options" role="listbox" aria-label="Horas sugeridas" hidden></ul>
+            </div>
             <p id="wake-help" class="sr-only">Usa 24 horas (07:30) o AM/PM (7:30 AM).</p>
           </div>
 

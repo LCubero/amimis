@@ -26,8 +26,8 @@ npm run build
 
 The app URL is `http://localhost:4173/amimis/`. The production base is `/amimis/`.
 For browser checks, follow the full Playwright setup and commands in `README.md`.
-Run all four scripts: `visual-checks.js`, `preferences-contrast.js`,
-`mobile-editing.js`, and `theme-reload.js` under `tests/`.
+Run all five scripts: `visual-checks.js`, `preferences-contrast.js`,
+`mobile-editing.js`, `theme-reload.js`, and `wake-picker.js` under `tests/`.
 No npm test script or Jest/Vitest runner is configured. Build output is `dist/`.
 
 ## Coding and Behavior

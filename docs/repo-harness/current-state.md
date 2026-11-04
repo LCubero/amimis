@@ -26,6 +26,7 @@ Este archivo proyecta hechos y registros del propietario canónico:
 - `RH-W-0002`: avisos de dependencias corregidos en el lockfile; 0 vulnerabilidades y pruebas correctas.
 - `RH-W-0003`: harness instalado, integrado y guardado localmente; comprobaciones y verificación independiente correctas. La revisión nativa no se realizó por límite de contexto.
 - `RH-W-0004`: interfaz pulida (icono del tema en SVG, «Limpiar», toggle `ES / EN`, textos y ayuda de los campos); pruebas de navegador correctas. Aún no desplegado.
+- `RH-W-0005`: la hora de despertar también se elige desde una lista cada 15 minutos (botón de reloj); cinco pruebas de navegador correctas. Aún no desplegado.
 
 ## Trabajo pendiente
 <!-- doc-role:pending-work -->
@@ -39,5 +40,5 @@ Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 
 El repositorio es público en GitHub con licencia MIT
 ([registro técnico](../../odd/tasks/public-release.md)). La página en línea
-<https://ld9.dev/amimis/> sirve la versión anterior a `RH-W-0004`. Siguiente, cuando el
+<https://ld9.dev/amimis/> sirve la versión anterior a `RH-W-0004` y `RH-W-0005`. Siguiente, cuando el
 usuario lo pida: desplegar esos cambios y estudiar la APK.

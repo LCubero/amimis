@@ -11,6 +11,7 @@ Este archivo registra los cambios completados en orden cronológico.
 - El selector de idioma pasa de una lista desplegable a un toggle redondo `ES / EN` con el idioma activo en verde.
 - El campo de hora muestra «Selecciona la hora» en gris y el de duración queda vacío; los formatos siguen en el texto de ayuda.
 - El texto de ayuda y el de error se alinean con el texto escrito dentro del campo.
+- La hora de despertar se puede elegir desde una lista cada 15 minutos con un botón de reloj, además de escribirla.
 
 ## 2026-11-03
 
