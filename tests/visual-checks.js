@@ -19,7 +19,17 @@ async (page) => {
   try {
     await app.goto(baseUrl.href);
     await openOptions();
-    await app.locator("#lang-select").selectOption("es");
+    await app.locator('[data-lang="es"]').click();
+    check(await app.locator("#wake-time").getAttribute("placeholder") === "Selecciona la hora", "Spanish wake placeholder changed");
+    check(!await app.locator("#sleep-duration").getAttribute("placeholder"), "Duration field shows placeholder text");
+    const helpOffset = await app.evaluate(() => {
+      const textStart = (element) => {
+        const style = getComputedStyle(element);
+        return element.getBoundingClientRect().left + parseFloat(style.borderLeftWidth) + parseFloat(style.paddingLeft);
+      };
+      return Math.abs(textStart(document.querySelector("#duration-help")) - textStart(document.querySelector("#sleep-duration")));
+    });
+    check(helpOffset <= 1, `Duration help is not aligned with the field text: ${helpOffset}px`);
     await app.locator("#wake-time").fill("07:00");
     await app.locator("#sleep-duration").fill("7.5");
     await app.locator("#time-format").selectOption("24");
@@ -46,10 +56,17 @@ async (page) => {
     await app.goto(baseUrl.href);
     check(await app.locator("#wake-time").inputValue() === "07:00", "Wake time not restored without URL");
     check(await app.locator("#sleep-duration").inputValue() === "8", "Duration not restored without URL");
-    await app.locator("#lang-select").selectOption("en");
+    await app.locator('[data-lang="en"]').click();
     await app.reload();
     check(await app.locator("html").getAttribute("lang") === "en", "Language not persisted");
     check(await app.locator("#title").innerText() === "Sleep Time Calculator", "English heading changed");
+    check(await app.locator("#wake-time").getAttribute("placeholder") === "Select time", "English wake placeholder changed");
+    check(!await app.locator("#sleep-duration").getAttribute("placeholder"), "English duration field shows placeholder text");
+    check(await app.locator("#wake-time").evaluate((element) => getComputedStyle(element, "::placeholder").fontWeight) === "400", "Wake placeholder is not lighter than typed text");
+    check(await app.locator(".topbar select").count() === 0, "Language still uses a native select");
+    check(await app.locator('[data-lang="en"]').getAttribute("aria-pressed") === "true", "Active language not pressed");
+    check(await app.locator('[data-lang="es"]').getAttribute("aria-pressed") === "false", "Inactive language pressed");
+    check(await app.locator("#lang-toggle").getAttribute("aria-label") === "Language", "Language group label not translated");
 
     for (const theme of ["dark", "light"]) {
       if (await app.locator("body").getAttribute("data-theme") !== theme) {
@@ -58,6 +75,13 @@ async (page) => {
       await app.reload();
       check(await app.locator("body").getAttribute("data-theme") === theme, "Theme not persisted");
       await openOptions();
+      const clearStyle = await app.evaluate(() => {
+        const clear = getComputedStyle(document.querySelector("#clear-btn"));
+        const shortcut = getComputedStyle(document.querySelector(".shortcuts button:not(.is-active)"));
+        return { color: clear.color, text: getComputedStyle(document.body).color, weight: clear.fontWeight, shortcutWeight: shortcut.fontWeight };
+      });
+      check(clearStyle.color === clearStyle.text, `Clear button text is muted: ${theme}`);
+      check(clearStyle.weight === clearStyle.shortcutWeight, `Clear button weight differs from shortcuts: ${theme}`);
       for (const width of [320, 375, 768, 1280, 1920]) {
         await app.setViewportSize({ width, height: 1000 });
         const layout = await app.evaluate(() => {

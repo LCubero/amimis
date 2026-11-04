@@ -10,7 +10,7 @@ export type AppCopy = {
   optionsLabel: string;
   languageLabel: string;
   durationLabel: string;
-  durationPlaceholder: string;
+  wakePlaceholder: string;
   durationHelp: string;
   shortcutsLegend: string;
   formatLabel: string;
@@ -58,7 +58,7 @@ const COPY: Record<Language, AppCopy> = {
     optionsLabel: "Opciones",
     languageLabel: "Idioma",
     durationLabel: "Duración de sueño (horas)",
-    durationPlaceholder: "Ej: 7.5, 7,5, 7:30, 7h 30m...",
+    wakePlaceholder: "Selecciona la hora",
     durationHelp: "Ej.: 7.5, 7:30 o 7h 30m.",
     shortcutsLegend: "Atajos de duración",
     formatLabel: "Formato de hora",
@@ -102,7 +102,7 @@ const COPY: Record<Language, AppCopy> = {
     optionsLabel: "Options",
     languageLabel: "Language",
     durationLabel: "Sleep duration (hours)",
-    durationPlaceholder: "Ex: 7.5, 7:30, 7h 30m...",
+    wakePlaceholder: "Select time",
     durationHelp: "E.g. 7.5, 7:30 or 7h 30m.",
     shortcutsLegend: "Duration shortcuts",
     formatLabel: "Time format",

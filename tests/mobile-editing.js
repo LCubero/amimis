@@ -48,7 +48,7 @@ async (page) => {
       await app.locator("#remember-toggle").uncheck();
       await app.locator("#time-format").selectOption("12");
     }
-    await app.locator("#lang-select").selectOption("es");
+    await app.locator('[data-lang="es"]').click();
     await wake.fill("07:00");
     await app.locator('[data-duration="7.5"]').click();
     for (const [fmt, main, meta] of [
@@ -68,7 +68,7 @@ async (page) => {
     check(await app.locator("#result-main").innerText() === "Duración inválida.", "Spanish invalid-duration result lacks accents");
     await app.locator("#time-format").selectOption("12");
     for (const language of ["en", "es"]) {
-      await app.locator("#lang-select").selectOption(language);
+      await app.locator(`[data-lang="${language}"]`).click();
       for (const theme of ["dark", "light"]) {
         if (await app.locator("body").getAttribute("data-theme") !== theme) await app.locator("#theme-toggle").click();
         for (const [width, height] of [[320, 667], [375, 812], [390, 844]]) {

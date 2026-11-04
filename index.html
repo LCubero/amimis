@@ -29,16 +29,11 @@
             amimis<span class="brand-dot" aria-hidden="true">.</span>
           </span>
           <div class="field-actions">
-            <label for="lang-select" class="sr-only">Idioma</label>
-            <select
-              id="lang-select"
-              class="lang-select"
-              aria-label="Idioma"
-              title="Idioma"
-            >
-              <option value="es">ES</option>
-              <option value="en">EN</option>
-            </select>
+            <div id="lang-toggle" class="lang-toggle" role="group" aria-label="Idioma" title="Idioma">
+              <button type="button" data-lang="es" aria-pressed="true">ES</button>
+              <span aria-hidden="true">/</span>
+              <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
             <button
               id="theme-toggle"
               type="button"
@@ -48,7 +43,21 @@
               title="Cambiar tema"
               data-tooltip="Modo claro"
             >
-              <span class="theme-icon" aria-hidden="true">☀</span>
+              <span class="theme-icon" data-icon="sun" aria-hidden="true">
+                <svg data-icon="sun" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+                  <path
+                    d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <svg data-icon="moon" viewBox="0 0 32 32" fill="none">
+                  <path d="M25 20A12 12 0 0 1 12 7a11 11 0 1 0 13 13Z" fill="currentColor" />
+                  <path d="m24 4 1.2 3.8L29 9l-3.8 1.2L24 14l-1.2-3.8L19 9l3.8-1.2L24 4Z" fill="currentColor" />
+                </svg>
+              </span>
               <span class="sr-only" id="theme-toggle-text">Cambiar a modo claro</span>
             </button>
           </div>
@@ -71,7 +80,7 @@
               inputmode="text"
               autocomplete="off"
               spellcheck="false"
-              placeholder="07:30 / 7:30 AM"
+              placeholder="Selecciona la hora"
               aria-describedby="wake-help"
               required
             />
@@ -87,7 +96,6 @@
               inputmode="decimal"
               autocomplete="off"
               aria-describedby="duration-help duration-error"
-              placeholder="Ej: 7.5, 7,5, 7:30, 7h 30m…"
             />
             <p id="duration-help" class="help">
               Formatos validos: 7.5, 7,5, 7:30, 7h 30m, 7 horas y media.

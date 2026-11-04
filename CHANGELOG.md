@@ -4,6 +4,14 @@
 
 Este archivo registra los cambios completados en orden cronológico.
 
+## 2026-11-04
+
+- El botón de tema muestra iconos SVG de sol y luna en lugar de caracteres de texto.
+- El botón «Limpiar» usa el color de texto y negrita, como los atajos.
+- El selector de idioma pasa de una lista desplegable a un toggle redondo `ES / EN` con el idioma activo en verde.
+- El campo de hora muestra «Selecciona la hora» en gris y el de duración queda vacío; los formatos siguen en el texto de ayuda.
+- El texto de ayuda y el de error se alinean con el texto escrito dentro del campo.
+
 ## 2026-11-03
 
 - Se instaló el harness para Pi, con documentación humana en español y MIT solo para las skills generadas.

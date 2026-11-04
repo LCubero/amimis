@@ -3,8 +3,8 @@ async (page) => {
   url.search = "";
   const results = [];
   const palette = {
-    light: { background: "rgb(242, 246, 250)", text: "rgb(28, 37, 47)", card: "rgb(255, 255, 255)", icon: "☾" },
-    dark: { background: "rgb(14, 20, 25)", text: "rgb(228, 237, 245)", card: "rgb(22, 32, 40)", icon: "☀" },
+    light: { background: "rgb(242, 246, 250)", text: "rgb(28, 37, 47)", card: "rgb(255, 255, 255)", icon: "moon", visibleIcon: "moon", glyph: "" },
+    dark: { background: "rgb(14, 20, 25)", text: "rgb(228, 237, 245)", card: "rgb(22, 32, 40)", icon: "sun", visibleIcon: "sun", glyph: "" },
   };
   for (const system of ["dark", "light"]) {
     const context = await page.context().browser().newContext({ colorScheme: system });
@@ -22,7 +22,12 @@ async (page) => {
             text: getComputedStyle(document.body).color,
             card: getComputedStyle(document.querySelector("form")).backgroundColor,
             colorScheme: getComputedStyle(document.documentElement).colorScheme,
-            icon: document.querySelector(".theme-icon").textContent,
+            icon: document.querySelector(".theme-icon").dataset.icon,
+            visibleIcon: [...document.querySelectorAll(".theme-icon svg")]
+              .filter((svg) => svg.getClientRects().length > 0)
+              .map((svg) => svg.dataset.icon)
+              .join(","),
+            glyph: document.querySelector(".theme-icon").textContent.trim(),
           }));
           for (const [key, expected] of Object.entries({ ...palette[selected], rootTheme: selected, bodyTheme: selected, colorScheme: selected })) {
             if (actual[key] !== expected) throw new Error(`${system}/${selected}/${stage}: ${key} is ${actual[key]}, expected ${expected}`);

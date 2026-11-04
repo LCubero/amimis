@@ -23,6 +23,26 @@ Ninguno.
 ## Registros resueltos
 <!-- doc-role:resolved-records -->
 
+### RH-W-0004
+
+**Tema:** pulir botones e iconos de la interfaz.
+
+Estado: `completed`
+
+- **Prioridad:** P2, pendiente acordado al cerrar la sesión del 2026-11-03; mejora visual sin defecto funcional.
+- **Origen:** revisión visual del 2026-11-04 con Playwright (celular 390×844 y escritorio 1280×800, temas oscuro y claro, opciones abiertas y cerradas). El usuario la confirmó: «eso mismo queria revisar genial. anotalo».
+- **Dependencias:** ninguna.
+- **Completado:** revisión y lista de detalles. Todos los controles miden al menos 44px de alto; el checkbox mide 18px, pero su fila entera (328×44) es tocable. El 2026-11-04, con «dale dale»:
+  1. Icono del tema: el sol (☀) y la luna (☾), que eran caracteres de texto, pasaron a iconos SVG; la luna reutiliza el trazo del logo. `tests/theme-reload.js` comprueba el icono visible y que no quede texto.
+  2. Botón «Limpiar»: pasa del gris fino al color de texto, en negrita como los atajos. `tests/visual-checks.js` lo comprueba en ambos temas.
+  4. Selector de idioma: al usuario no le gustaba («tiene la flecha muy a la recha» y la lista abierta «se ve bien feo»). Pidió un toggle «redondo y con el tema actual de mimis». El `<select>` pasó a una píldora `ES / EN` con dos botones `aria-pressed` de 44×44; el activo va en verde (`--accent-strong` en tema claro por contraste). Las cuatro pruebas usan el toggle y comprueban que no quede un `<select>`.
+  6. Textos dentro de los campos: el usuario pidió «noo quiero que salga texto donde se escribe, para eso esta el texto abao de Ej.» y, para la hora, «seleccione hora» en gris. La hora muestra «Selecciona la hora» / «Select time», más fino y pequeño que el texto escrito; la duración queda vacía. Después pidió «un paddin de 0.9rem o equivalente para el "Ej"»: la ayuda y el error comparten con el campo la variable `--field-padding-x` (0.75rem en móvil, 0.85rem desde 768px) más el borde de 1px, para alinearse con su texto. `tests/visual-checks.js` lo comprueba en ES y EN.
+- **Restante:** `none`.
+- **Adiciones / exclusiones:** se añadieron los textos de los campos y la alineación de la ayuda. Excluidos por el usuario («ok esta bien ahi perfecto»): el checkbox sin marcar (ya usa `accent-color` al marcarse) y el borde de foco grueso, que se mantiene por accesibilidad. Sin cambios de cálculo, URL, almacenamiento ni base de despliegue. Aplazamientos y rechazos adicionales: ninguno.
+- **Evidencia:** capturas locales fuera del repositorio (`/tmp/amimis-audit/`), no versionadas.
+- **Historial:** registrado el 2026-11-04; puntos 1, 2, 4 y 6 implementados el mismo día, con tipos, build y las cuatro pruebas de navegador correctos; cerrado con «dale».
+- **Condición del siguiente avance:** `none`. Publicar en ld9.dev es una operación aparte.
+
 ### RH-W-0002
 
 **Tema:** revisar avisos de dependencias del lockfile.

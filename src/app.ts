@@ -37,7 +37,8 @@ function queryRequired<T extends Element>(selector: string): T {
 const wakeInput = queryRequired<HTMLInputElement>("#wake-time");
 const durationInput = queryRequired<HTMLInputElement>("#sleep-duration");
 const formatSelect = queryRequired<HTMLSelectElement>("#time-format");
-const langSelect = queryRequired<HTMLSelectElement>("#lang-select");
+const langToggle = queryRequired<HTMLElement>("#lang-toggle");
+const languageButtons = langToggle.querySelectorAll<HTMLButtonElement>("[data-lang]");
 const shortcutButtons = document.querySelectorAll<HTMLButtonElement>("[data-duration]");
 const clearButton = queryRequired<HTMLButtonElement>("#clear-btn");
 const resultCard = queryRequired<HTMLElement>(".result");
@@ -135,7 +136,7 @@ function applyStaticCopy(): void {
   queryRequired<HTMLElement>("#wake-help").textContent = copy.wakeHelp;
   queryRequired<HTMLElement>("#options-label").textContent = copy.optionsLabel;
   queryRequired<HTMLElement>("#duration-label").textContent = copy.durationLabel;
-  durationInput.placeholder = copy.durationPlaceholder;
+  wakeInput.placeholder = copy.wakePlaceholder;
   queryRequired<HTMLElement>("#duration-help").textContent = copy.durationHelp;
   queryRequired<HTMLElement>("#shortcuts-legend").textContent = copy.shortcutsLegend;
   queryRequired<HTMLElement>("#time-format-label").textContent = copy.formatLabel;
@@ -144,8 +145,11 @@ function applyStaticCopy(): void {
   queryRequired<HTMLElement>("#remember-label").textContent = copy.rememberLabel;
   clearButton.textContent = copy.clearButton;
 
-  langSelect.setAttribute("aria-label", copy.languageLabel);
-  langSelect.setAttribute("title", copy.languageLabel);
+  langToggle.setAttribute("aria-label", copy.languageLabel);
+  langToggle.setAttribute("title", copy.languageLabel);
+  languageButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", button.dataset.lang === currentLanguage ? "true" : "false");
+  });
 
   setTheme(getCurrentTheme());
 }
@@ -156,7 +160,7 @@ function setTheme(theme: Theme): void {
   const isDark = nextTheme === THEME_DARK;
   const nextActionLabel = isDark ? copy.themeToLight : copy.themeToDark;
   const nextTooltip = isDark ? copy.themeTooltipLight : copy.themeTooltipDark;
-  const icon = isDark ? "☀" : "☾";
+  const icon = isDark ? "sun" : "moon";
 
   document.documentElement.setAttribute("data-theme", nextTheme);
   document.body.setAttribute("data-theme", nextTheme);
@@ -169,7 +173,7 @@ function setTheme(theme: Theme): void {
   themeToggle.setAttribute("data-tooltip", nextTooltip);
   themeToggle.setAttribute("title", nextActionLabel);
   themeToggleText.textContent = nextActionLabel;
-  themeToggleIcon.textContent = icon;
+  themeToggleIcon.dataset.icon = icon;
 }
 
 function getCurrentTheme(): Theme {
@@ -376,7 +380,6 @@ function initializeFromUrl(): void {
   }
 
   rememberToggle.checked = storedRemember;
-  langSelect.value = currentLanguage;
 
   applyStaticCopy();
   setTheme(restoreTheme());
@@ -391,11 +394,13 @@ function setupEvents(): void {
 
   formatSelect.addEventListener("change", () => render({ announce: true }));
 
-  langSelect.addEventListener("change", () => {
-    currentLanguage = langSelect.value === "en" ? "en" : "es";
-    saveLanguage(currentLanguage);
-    applyStaticCopy();
-    render({ announce: true });
+  languageButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      currentLanguage = button.dataset.lang === "en" ? "en" : "es";
+      saveLanguage(currentLanguage);
+      applyStaticCopy();
+      render({ announce: true });
+    });
   });
 
   clearButton.addEventListener("click", () => {

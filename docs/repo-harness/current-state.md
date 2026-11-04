@@ -25,11 +25,12 @@ Este archivo proyecta hechos y registros del propietario canónico:
 - `RH-W-0001`: cerrado; el tema oscuro tras F5 lo causaba la extensión Dark Reader del usuario.
 - `RH-W-0002`: avisos de dependencias corregidos en el lockfile; 0 vulnerabilidades y pruebas correctas.
 - `RH-W-0003`: harness instalado, integrado y guardado localmente; comprobaciones y verificación independiente correctas. La revisión nativa no se realizó por límite de contexto.
+- `RH-W-0004`: interfaz pulida (icono del tema en SVG, «Limpiar», toggle `ES / EN`, textos y ayuda de los campos); pruebas de navegador correctas. Aún no desplegado.
 
 ## Trabajo pendiente
 <!-- doc-role:pending-work -->
 
-Ninguno registrado. El despliegue y la APK esperan indicaciones del usuario.
+Ninguno registrado. La APK espera indicaciones del usuario.
 
 Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 
@@ -38,5 +39,5 @@ Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 
 El repositorio es público en GitHub con licencia MIT
 ([registro técnico](../../odd/tasks/public-release.md)). La página en línea
-<https://ld9.dev/amimis/> sirve la versión actual. Siguiente, cuando el usuario
-lo pida: pulir detalles de botones e iconos y estudiar la APK.
+<https://ld9.dev/amimis/> sirve la versión anterior a `RH-W-0004`. Siguiente, cuando el
+usuario lo pida: desplegar esos cambios y estudiar la APK.

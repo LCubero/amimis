@@ -56,7 +56,7 @@ async (page) => {
       const selectors = [
         "#title", "#intro", "#wake-label", "#duration-label", "#duration-help", "#duration-error",
         "#shortcuts-legend", "#time-format-label", "#remember-label", "#wake-time", "#sleep-duration",
-        "#time-format", "#lang-select", "#theme-toggle", "#clear-btn", "#result-main", "#result-meta",
+        "#time-format", "#lang-toggle button", "#theme-toggle", "#clear-btn", "#result-main", "#result-meta",
         "#signature-link", "#options-label", ".shortcuts button",
       ];
       for (const selector of selectors) {
@@ -89,14 +89,14 @@ async (page) => {
     await app.goto(baseUrl.href);
     for (const language of ["es", "en"]) {
       for (const theme of ["light", "dark"]) {
-        await app.locator("#lang-select").selectOption(language);
+        await app.locator(`[data-lang="${language}"]`).click();
         if (await app.locator("body").getAttribute("data-theme") !== theme) {
           await app.locator("#theme-toggle").click();
         }
         check(!await app.locator("#remember-toggle").isChecked(), "Preferences should not require remembering form values");
         await app.reload();
         check(await app.locator("html").getAttribute("lang") === language, `Language lost on reload: ${language}`);
-        check(await app.locator("#lang-select").inputValue() === language, "Language selector out of sync");
+        check(await app.locator(`[data-lang="${language}"]`).getAttribute("aria-pressed") === "true", "Language toggle out of sync");
         check(await app.locator("body").getAttribute("data-theme") === theme, `Theme lost on reload: ${theme}`);
         check(await app.locator("html").getAttribute("data-theme") === theme, "Root theme out of sync");
         await app.locator("#wake-time").fill("07:00");
