@@ -136,6 +136,7 @@ form.card {
 }
 
 fieldset.field {
+  position: relative;
   margin: 0;
   padding: 0;
   border: 0;
@@ -338,6 +339,79 @@ body[data-theme="light"] .shortcuts button.is-active {
   accent-color: var(--accent-strong);
 }
 
+.options-row {
+  position: relative;
+}
+
+#clear-fields-btn {
+  position: absolute;
+  z-index: 1;
+  top: calc(0.375rem + 1px);
+  right: 0;
+  border: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+#clear-fields-btn:hover,
+#clear-fields-btn:focus-visible,
+#cycles-info-toggle:hover,
+#cycles-info-toggle:focus-visible {
+  color: var(--accent);
+  /* Text and icon buttons change color only; no tinted box like filled buttons. */
+  background: transparent;
+}
+
+#shortcuts-legend {
+  position: relative;
+  padding-right: 2.75rem;
+}
+
+#cycles-info-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.875rem;
+  border: 0;
+  color: var(--muted);
+}
+
+#cycles-info-toggle svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+}
+
+#cycles-info {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: 0.375rem;
+  left: 0;
+  width: min(18rem, 100%);
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+#cycles-info p {
+  margin: 0;
+}
+
+fieldset:has(#cycles-info-toggle[aria-expanded="true"]) #cycles-info,
+fieldset:has(#cycles-info-toggle:not(.is-dismissed):is(:hover, :focus-visible)) #cycles-info {
+  display: block;
+}
+
 .calculator-options {
   border-top: 1px solid var(--border);
   padding-top: 0.375rem;
@@ -345,7 +419,7 @@ body[data-theme="light"] .shortcuts button.is-active {
 
 .calculator-options summary {
   min-height: 2.75rem;
-  padding: 0.625rem 0;
+  padding: 0.625rem 5rem 0.625rem 0;
   color: var(--muted);
   font-size: 0.875rem;
   font-weight: 600;

@@ -100,6 +100,15 @@ const formatSelect = queryRequired<HTMLSelectElement>("#time-format");
 const langToggle = queryRequired<HTMLElement>("#lang-toggle");
 const languageButtons = langToggle.querySelectorAll<HTMLButtonElement>("[data-lang]");
 const shortcutButtons = document.querySelectorAll<HTMLButtonElement>("[data-duration]");
+const cyclesInfoToggle = queryRequired<HTMLButtonElement>("#cycles-info-toggle");
+const cyclesInfo = queryRequired<HTMLElement>("#cycles-info");
+const clearFieldsButton = queryRequired<HTMLButtonElement>("#clear-fields-btn");
+
+function closeCyclesInfo(): void {
+  cyclesInfoToggle.setAttribute("aria-expanded", "false");
+  cyclesInfoToggle.classList.add("is-dismissed");
+}
+
 const clearButton = queryRequired<HTMLButtonElement>("#clear-btn");
 const resultCard = queryRequired<HTMLElement>(".result");
 const resultMain = queryRequired<HTMLElement>("#result-main");
@@ -198,7 +207,11 @@ function applyStaticCopy(): void {
   queryRequired<HTMLElement>("#duration-label").textContent = copy.durationLabel;
   wakeInput.placeholder = copy.wakePlaceholder;
   queryRequired<HTMLElement>("#duration-help").textContent = copy.durationHelp;
-  queryRequired<HTMLElement>("#shortcuts-legend").textContent = copy.shortcutsLegend;
+  queryRequired<HTMLElement>("#shortcuts-label").textContent = copy.shortcutsLegend;
+  cyclesInfoToggle.setAttribute("aria-label", copy.cyclesInfoLabel);
+  cyclesInfo.querySelector("p")!.textContent = copy.cyclesInfo;
+  clearFieldsButton.textContent = copy.clearFields;
+  clearFieldsButton.setAttribute("aria-label", copy.clearFieldsLabel);
   queryRequired<HTMLElement>("#time-format-label").textContent = copy.formatLabel;
   queryRequired<HTMLOptionElement>("#time-format-12").textContent = copy.format12;
   queryRequired<HTMLOptionElement>("#time-format-24").textContent = copy.format24;
@@ -448,6 +461,29 @@ function initializeFromUrl(): void {
 }
 
 function setupEvents(): void {
+  cyclesInfoToggle.addEventListener("click", () => {
+    if (cyclesInfoToggle.getAttribute("aria-expanded") === "true") closeCyclesInfo();
+    else {
+      cyclesInfoToggle.classList.remove("is-dismissed");
+      cyclesInfoToggle.setAttribute("aria-expanded", "true");
+    }
+  });
+  for (const event of ["mouseenter", "focus"]) {
+    cyclesInfoToggle.addEventListener(event, () => cyclesInfoToggle.classList.remove("is-dismissed"));
+  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeCyclesInfo();
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (event.target instanceof Node && !cyclesInfoToggle.contains(event.target) && !cyclesInfo.contains(event.target)) closeCyclesInfo();
+  });
+  clearFieldsButton.addEventListener("click", () => {
+    closeWakePicker();
+    wakeInput.value = "";
+    durationInput.value = "";
+    render({ announce: true });
+    wakeInput.focus();
+  });
   wakePickerToggle.addEventListener("click", () => {
     if (wakeOptions.hidden) openWakePicker();
     else closeWakePicker();

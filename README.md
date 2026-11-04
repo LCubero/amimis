@@ -9,6 +9,7 @@ Calculadora web para estimar a qué hora dormirte según tu hora de despertar y 
 - Cálculo inmediato de hora recomendada para dormir.
 - Entrada flexible de duración (`7.5`, `7,5`, `7:30`, `7h 30m`, etc.).
 - Atajos rápidos: `4.5h`, `6h`, `7.5h`, `8h`, `9h`.
+  El botón de información explica brevemente los ciclos de unos 90 minutos al pasar el mouse, enfocar o tocar.
 - Soporte de idioma `ES/EN` con persistencia en `localStorage`.
 - Modo claro/oscuro con persistencia.
 - El idioma y el tema se recuerdan automáticamente, sin activar «Recordar tus valores».
@@ -20,7 +21,9 @@ Calculadora web para estimar a qué hora dormirte según tu hora de despertar y 
   El cálculo y los enlaces guardan la hora normalizada en formato de 24 horas.
   El botón de reloj ofrece sugerencias cada 15 minutos sin limitar la escritura.
   Desde el campo, ↓ abre la lista; ↑/↓ recorren las horas, Enter elige y Esc o Tab cierran sin cambiar el valor.
-- «Opciones» despliega el formato de salida, «Recordar tus valores» y «Limpiar».
+- «Limpiar», junto a «Opciones», vacía solo la hora y la duración, sin confirmación ni cambios de preferencias.
+- «Opciones» despliega el formato de salida, «Recordar tus valores» y «Restablecer».
+  «Restablecer» confirma antes de borrar todos los valores del formulario, el estado guardado y la URL; conserva idioma y tema.
 
 ## Stack
 

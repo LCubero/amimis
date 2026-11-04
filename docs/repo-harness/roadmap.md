@@ -23,6 +23,38 @@ Ninguno.
 ## Registros resueltos
 <!-- doc-role:resolved-records -->
 
+### RH-W-0006
+
+**Tema:** explicar brevemente los ciclos de 90 minutos de los atajos.
+
+Estado: `completed`
+
+- **Prioridad:** P3, extra informativo pedido por el usuario.
+- **Origen:** «quizá le podemos poner alguna info de porque se sugiere ciclos de hora y media para dormir, no sé donde no estorben, no hagan mas grande, no son necesarios son extra, puede ser hover o lago simple, sin complicarlo algo muy breve.»
+- **Dependencias:** ninguna.
+- **Completado:** el 2026-11-04, botón ⓘ junto a «Atajos de duración»; el globo aparece al pasar el mouse, enfocar o tocar, y se cierra con Esc o tocando fuera. No cambia la altura del formulario (comprobado en `tests/visual-checks.js`).
+- **Restante:** `none`.
+- **Adiciones / exclusiones:** el texto es prudente («unos 90 minutos», «suele») porque la duración del ciclo varía entre personas. Aplazamientos y rechazos adicionales: ninguno.
+- **Evidencia:** `tests/visual-checks.js`; las cinco pruebas de navegador pasan.
+- **Historial:** registrado el 2026-11-04; revisado en local y aprobado por el usuario: «perfecto».
+- **Condición del siguiente avance:** `none`. Publicar en ld9.dev es una operación aparte.
+
+### RH-W-0007
+
+**Tema:** separar «borrar hora y duración» de «restablecer todo».
+
+Estado: `completed`
+
+- **Prioridad:** P2, claridad del formulario.
+- **Origen:** «y el limpiar de opciones no lo veo util, bueno si y no, quiza debe ser reset ese de abajo, y ponemos un texto boton que sea para limpiar lo puesto o selecionado de hora de despertar y duracion de sueño».
+- **Dependencias:** ninguna.
+- **Completado:** el 2026-11-04, el botón de Opciones pasó a «Restablecer» / «Reset» con su comportamiento anterior; nuevo botón de texto «Limpiar» en la fila de «Opciones» que vacía solo hora y duración, sin confirmación, y devuelve el foco a la hora. `tests/visual-checks.js` comprueba ambos; README actualizado.
+- **Restante:** `none`.
+- **Adiciones / exclusiones:** formato, idioma, tema y «Recordar» no cambian al limpiar. Aplazamientos y rechazos adicionales: ninguno.
+- **Evidencia:** `tests/visual-checks.js`; las cinco pruebas de navegador pasan.
+- **Historial:** registrado el 2026-11-04; revisado en local y aprobado por el usuario: «perfecto».
+- **Condición del siguiente avance:** `none`. Publicar en ld9.dev es una operación aparte.
+
 ### RH-W-0005
 
 **Tema:** elegir la hora de despertar con mouse o toque, sin perder la escritura.

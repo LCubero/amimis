@@ -115,7 +115,8 @@
           </div>
 
           <fieldset class="field">
-            <legend id="shortcuts-legend">Atajos de duración</legend>
+            <legend id="shortcuts-legend"><span id="shortcuts-label">Atajos de duración</span><button id="cycles-info-toggle" type="button" aria-label="Por qué estos atajos" aria-expanded="false" aria-controls="cycles-info"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></legend>
+            <div id="cycles-info" role="note"><p></p></div>
             <div class="shortcuts">
               <button type="button" data-duration="4.5">4.5h</button>
               <button type="button" data-duration="6">6h</button>
@@ -125,6 +126,8 @@
             </div>
           </fieldset>
 
+          <div class="options-row">
+          <button id="clear-fields-btn" type="button" aria-label="Limpiar hora y duración">Limpiar</button>
           <details id="calculator-options" class="calculator-options">
             <summary id="options-label">Opciones</summary>
             <div class="settings-fields">
@@ -143,11 +146,12 @@
 
               <div class="actions">
                 <button id="clear-btn" type="button" class="btn-ghost">
-                  Limpiar
+                  Restablecer
                 </button>
               </div>
             </div>
           </details>
+          </div>
         </form>
 
         <section class="result card" aria-labelledby="result-main">

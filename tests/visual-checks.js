@@ -20,6 +20,28 @@ async (page) => {
     await app.goto(baseUrl.href);
     await openOptions();
     await app.locator('[data-lang="es"]').click();
+    const info = app.locator("#cycles-info-toggle");
+    check(await info.count() === 1, "Missing cycles info button");
+    const dimensions = await info.boundingBox();
+    check(dimensions.width >= 44 && dimensions.height >= 44, "Info touch target below 44px");
+    const heightDifference = await app.evaluate(() => {
+      const button = document.querySelector("#cycles-info-toggle");
+      const before = document.querySelector("form").getBoundingClientRect().height;
+      button.style.display = "none";
+      const without = document.querySelector("form").getBoundingClientRect().height;
+      button.style.display = "";
+      return Math.abs(before - without);
+    });
+    check(heightDifference <= 1, "Info increases form height");
+    await info.click();
+    check(await info.getAttribute("aria-expanded") === "true" && await app.locator("#cycles-info").isVisible(), "Info did not open");
+    check((await app.locator("#cycles-info").innerText()).includes("90 minutos"), "Missing Spanish cycles text");
+    await info.click();
+    check(await info.getAttribute("aria-expanded") === "false" && !await app.locator("#cycles-info").isVisible(), "Info did not toggle closed");
+    await info.click();
+    await app.keyboard.press("Escape");
+    check(await info.getAttribute("aria-expanded") === "false" && !await app.locator("#cycles-info").isVisible(), "Escape did not close info");
+    check((await app.locator("#clear-btn").innerText()) === "Restablecer", "Missing Spanish reset label");
     check(await app.locator("#wake-time").getAttribute("placeholder") === "Selecciona la hora", "Spanish wake placeholder changed");
     check(!await app.locator("#sleep-duration").getAttribute("placeholder"), "Duration field shows placeholder text");
     const helpOffset = await app.evaluate(() => {
@@ -60,6 +82,31 @@ async (page) => {
     await app.reload();
     check(await app.locator("html").getAttribute("lang") === "en", "Language not persisted");
     check(await app.locator("#title").innerText() === "Sleep Time Calculator", "English heading changed");
+    await openOptions();
+    check(await app.locator("#clear-btn").innerText() === "Reset", "Missing English reset label");
+    await info.click();
+    check((await app.locator("#cycles-info").innerText()).includes("90 minutes"), "Missing English cycles text");
+    await app.keyboard.press("Escape");
+    for (const open of [true, false]) {
+      await app.locator("#calculator-options").evaluate((element, value) => { element.open = value; }, open);
+      const format = await app.locator("#time-format").inputValue();
+      const remember = await app.locator("#remember-toggle").isChecked();
+      let dialogSeen = false;
+      const rejectDialog = async (dialog) => { dialogSeen = true; await dialog.dismiss(); };
+      app.on("dialog", rejectDialog);
+      await app.locator("#clear-fields-btn").click();
+      app.off("dialog", rejectDialog);
+      check(!dialogSeen, "Field clear opened a dialog");
+      check(await app.locator("#wake-time").inputValue() === "" && await app.locator("#sleep-duration").inputValue() === "", "Fields not cleared");
+      check(await app.locator("#result-main").innerText() === "Fill in the fields to calculate.", "Clear did not restore prompt");
+      check(!new URL(app.url()).searchParams.has("wake") && !new URL(app.url()).searchParams.has("sleep"), "Clear retained URL values");
+      check(await app.locator("#time-format").inputValue() === format && await app.locator("#remember-toggle").isChecked() === remember, "Clear changed preferences");
+      check(await app.locator("#wake-time").evaluate((element) => element === document.activeElement), "Clear did not focus wake time");
+      check(await app.locator("#calculator-options").evaluate((element) => element.open) === open, "Clear toggled options");
+      check(await app.locator('[data-duration][aria-pressed="true"]').count() === 0, "Clear retained shortcut selection");
+      await app.locator("#wake-time").fill("07:00");
+      await app.locator('[data-duration="8"]').click();
+    }
     check(await app.locator("#wake-time").getAttribute("placeholder") === "Select time", "English wake placeholder changed");
     check(!await app.locator("#sleep-duration").getAttribute("placeholder"), "English duration field shows placeholder text");
     check(await app.locator("#wake-time").evaluate((element) => getComputedStyle(element, "::placeholder").fontWeight) === "400", "Wake placeholder is not lighter than typed text");

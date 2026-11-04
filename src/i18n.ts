@@ -15,6 +15,10 @@ export type AppCopy = {
   wakePlaceholder: string;
   durationHelp: string;
   shortcutsLegend: string;
+  cyclesInfoLabel: string;
+  cyclesInfo: string;
+  clearFields: string;
+  clearFieldsLabel: string;
   formatLabel: string;
   format12: string;
   format24: string;
@@ -65,11 +69,15 @@ const COPY: Record<Language, AppCopy> = {
     wakePlaceholder: "Selecciona la hora",
     durationHelp: "Ej.: 7.5, 7:30 o 7h 30m.",
     shortcutsLegend: "Atajos de duración",
+    cyclesInfoLabel: "Por qué estos atajos",
+    cyclesInfo: "El sueño avanza en ciclos de unos 90 minutos. Despertar al terminar uno suele sentirse mejor; por eso los atajos de 4,5, 6, 7,5 y 9 h.",
+    clearFields: "Limpiar",
+    clearFieldsLabel: "Limpiar hora y duración",
     formatLabel: "Formato de hora",
     format12: "12h",
     format24: "24h",
     rememberLabel: "Recordar tus valores",
-    clearButton: "Limpiar",
+    clearButton: "Restablecer",
     resultPromptMain: "Completa los campos para calcular.",
     resultPromptMeta:
       "Completa la hora de despertar y la duración para ver la recomendación.",
@@ -111,11 +119,15 @@ const COPY: Record<Language, AppCopy> = {
     wakePlaceholder: "Select time",
     durationHelp: "E.g. 7.5, 7:30 or 7h 30m.",
     shortcutsLegend: "Duration shortcuts",
+    cyclesInfoLabel: "Why these shortcuts",
+    cyclesInfo: "Sleep runs in cycles of about 90 minutes. Waking at the end of one often feels better, hence the 4.5, 6, 7.5 and 9 h shortcuts.",
+    clearFields: "Clear",
+    clearFieldsLabel: "Clear wake time and duration",
     formatLabel: "Time format",
     format12: "12h",
     format24: "24h",
     rememberLabel: "Remember your values",
-    clearButton: "Clear",
+    clearButton: "Reset",
     resultPromptMain: "Fill in the fields to calculate.",
     resultPromptMeta:
       "Set wake-up time and sleep duration to see the recommendation.",
