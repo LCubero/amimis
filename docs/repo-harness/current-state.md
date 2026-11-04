@@ -25,9 +25,9 @@ Este archivo proyecta hechos y registros del propietario canónico:
 - `RH-W-0001`: cerrado; el tema oscuro tras F5 lo causaba la extensión Dark Reader del usuario.
 - `RH-W-0002`: avisos de dependencias corregidos en el lockfile; 0 vulnerabilidades y pruebas correctas.
 - `RH-W-0003`: harness instalado, integrado y guardado localmente; comprobaciones y verificación independiente correctas. La revisión nativa no se realizó por límite de contexto.
-- `RH-W-0004`: interfaz pulida (icono del tema en SVG, «Limpiar», toggle `ES / EN`, textos y ayuda de los campos); pruebas de navegador correctas. Aún no desplegado.
-- `RH-W-0005`: la hora de despertar también se elige desde una lista cada 15 minutos (botón de reloj); cinco pruebas de navegador correctas. Aún no desplegado.
-- `RH-W-0006` y `RH-W-0007`: globo ⓘ sobre los ciclos de unos 90 minutos; «Limpiar» (hora y duración) separado de «Restablecer» (todo). Aún no desplegado.
+- `RH-W-0004`: interfaz pulida (icono del tema en SVG, «Limpiar», toggle `ES / EN`, textos y ayuda de los campos); pruebas de navegador correctas.
+- `RH-W-0005`: la hora de despertar también se elige desde una lista cada 15 minutos (botón de reloj); cinco pruebas de navegador correctas.
+- `RH-W-0006` y `RH-W-0007`: globo ⓘ sobre los ciclos de unos 90 minutos; «Limpiar» (hora y duración) separado de «Restablecer» (todo).
 
 ## Trabajo pendiente
 <!-- doc-role:pending-work -->
@@ -41,5 +41,5 @@ Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 
 El repositorio es público en GitHub con licencia MIT
 ([registro técnico](../../odd/tasks/public-release.md)). La página en línea
-<https://ld9.dev/amimis/> sirve la versión anterior a `RH-W-0004`–`RH-W-0007`. Siguiente, cuando el
-usuario lo pida: desplegar esos cambios y estudiar la APK.
+<https://ld9.dev/amimis/> sirve `d2f5d38`, con `RH-W-0004`–`RH-W-0007`,
+desplegada el 2026-11-04. Siguiente, cuando el usuario lo pida: estudiar la APK.

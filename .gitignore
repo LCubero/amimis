@@ -2,6 +2,10 @@ node_modules/
 dist/
 export/
 
+# Never version private keys or local secrets.
+*.key
+secrets/
+
 # Local memory, diagnostic exports, and browser evidence
 .engram/
 .ldout/

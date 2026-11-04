@@ -14,6 +14,7 @@ Este archivo registra los cambios completados en orden cronológico.
 - La hora de despertar se puede elegir desde una lista cada 15 minutos con un botón de reloj, además de escribirla.
 - Un botón ⓘ junto a los atajos explica brevemente los ciclos de sueño de unos 90 minutos.
 - «Limpiar», en la fila de Opciones, vacía solo la hora y la duración; el botón de abajo pasa a «Restablecer».
+- Se desplegó `d2f5d38` en https://ld9.dev/amimis/, ahora desde Linux.
 
 ## 2026-11-03
 
