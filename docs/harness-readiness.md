@@ -53,7 +53,7 @@ artefactos; su razón y alcance están en [decisiones](repo-harness/decisions.md
 ## Validación reproducible
 
 Los comandos completos y la instalación de Playwright están en
-[README.md](../README.md#revisión-visual-con-playwright).
+[la guía de desarrollo](desarrollo.md#comprobaciones-de-navegador).
 
 | Comprobación | Comando o archivo |
 | --- | --- |

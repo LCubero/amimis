@@ -6,7 +6,7 @@ Read first. This is how work is done here. Where the project stands lives in [cu
 
 ## Purpose
 
-Amimis is a mobile-first bedtime calculator for planning sleep from a wake-up time and desired duration. Product usage and verification belong to [README.md](README.md); project coding constraints belong to [AGENTS.md](AGENTS.md).
+Amimis is a mobile-first bedtime calculator for planning sleep from a wake-up time and desired duration. Product usage belongs to [README.md](README.md); development and verification belong to [docs/desarrollo.md](docs/desarrollo.md); project coding constraints belong to [AGENTS.md](AGENTS.md).
 
 ## Hard Rules
 
@@ -29,7 +29,7 @@ Amimis is a mobile-first bedtime calculator for planning sleep from a wake-up ti
 | Starting or resuming work | `.repo-harness/skills/repo-harness-session-start/SKILL.md` |
 | Pausing or closing work | `.repo-harness/skills/repo-harness-session-stop/SKILL.md` |
 | How to use the harness as a human | [usage guide](docs/repo-harness/usage.md) |
-| A canonical skill changed, or a runtime copy may be stale | `python3 .repo-harness/check.py` (`python` on Windows) |
+| A canonical skill changed, or a runtime copy may be stale | `python3 .repo-harness/check.py` |
 | Sizing a change, deciding when to stop, how work is done | `.repo-harness/rules/working-agreements.md` |
 | Saving or recalling across sessions, memory unavailable | `.repo-harness/rules/memory.md` |
 | An answer requires a notice, pending action, question, approval, visible next action, or contextual explanation | `.repo-harness/rules/response-contract.md` |

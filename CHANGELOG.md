@@ -6,6 +6,9 @@ Este archivo registra los cambios completados en orden cronológico.
 
 ## 2026-11-04
 
+- README simplificado para el público; la guía técnica pasa a `docs/desarrollo.md` y se actualizan sus referencias.
+- Capturas de móvil y escritorio renovadas con la interfaz actual en español y tema oscuro.
+
 - El botón de tema muestra iconos SVG de sol y luna en lugar de caracteres de texto.
 - El botón «Limpiar» usa el color de texto y negrita, como los atajos.
 - El selector de idioma pasa de una lista desplegable a un toggle redondo `ES / EN` con el idioma activo en verde.

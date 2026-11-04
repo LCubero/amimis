@@ -13,13 +13,14 @@
 
 ## Decisiones de Amimis
 
+- **Entorno:** trabajamos solo en Linux (Fedora), por decisión del usuario («Trabajamos solo en Linux» → «ok si mejor»): un único `node_modules`, Playwright funciona y la cadena de herramientas Android debe reconstruirse de todos modos; una APK previa con Capacitor se compiló en Windows fuera de este repositorio.
 - **Perfil:** solo Pi, elegido explícitamente por el usuario. No hay proyecciones de Claude Code ni OpenCode.
 - **Idiomas:** documentación humana y conversación en español; contratos, scripts, skills y otros artefactos técnicos en inglés.
 - **Licencia:** MIT para la app y para las skills generadas. El 2026-11-03 el usuario delegó la elección («que me recomiendas, a mi me da igual, mientras pueda usarla quiza en futuro para publicar el app de mobiles y que tenga algun ingreso»); MIT permite al autor publicar y monetizar, y también permite a terceros reutilizar el código conservando el aviso.
 - **Contribuciones:** no se crea CONTRIBUTING.md porque el usuario no desea recibir contribuciones por ahora.
 - **Seguimiento:** harness canónico, entrada AGENTS.md y proyecciones Pi versionados. El builder instalado por separado, otras skills, memorias, preferencias, sesiones y capturas permanecen locales.
 - **Integración:** modo integrado del builder, con Gentle AI y Engram independientes; no se duplica su autoridad ni se autoactiva una metodología.
-- **Preservación:** se conserva el README y la información útil existente; solo se integran estado, enlaces e instrucciones pertinentes. No se modifican código, almacenamiento, dependencias ni licencia de Amimis.
+- **Documentación:** el README presenta el producto al público; los detalles técnicos útiles se conservan en [la guía de desarrollo](../desarrollo.md). Esta separación no cambia código, almacenamiento, dependencias ni licencia de Amimis.
 - **Futuro comercial:** publicar en tiendas y monetizar son posibilidades aún no resueltas. No se autorizan anuncios, seguimiento, compras ni empaquetado móvil en esta instalación; la APK se estudiará más adelante como trabajo separado.
 
 ## Evidencia de aprobación

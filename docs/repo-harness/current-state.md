@@ -6,8 +6,8 @@
 <!-- doc-role:verified-state -->
 
 Amimis es una calculadora móvil de hora de dormir en TypeScript/Vite, con ES/EN,
-temas claro/oscuro y base de despliegue `/amimis/`. Uso y pruebas de la app:
-[README](../../README.md). La instalación del harness para Pi recibió `VALIDATED`;
+temas claro/oscuro y base de despliegue `/amimis/`. Presentación del producto:
+[README](../../README.md); desarrollo y pruebas: [guía de desarrollo](../desarrollo.md). La instalación del harness para Pi recibió `VALIDATED`;
 checker, check del builder, self-test, tipos/build y verificación independiente
 pasaron, junto con la lectura final del responsable de la instalación.
 `RH-W-0003` está completado localmente en el commit `7fa4a3d`. La revisión
@@ -32,7 +32,7 @@ Este archivo proyecta hechos y registros del propietario canónico:
 ## Trabajo pendiente
 <!-- doc-role:pending-work -->
 
-Ninguno registrado. La APK espera indicaciones del usuario.
+No hay implementación pendiente registrada. El siguiente paso es estudiar la APK cuando el usuario lo pida.
 
 Estados, evidencia y condiciones completas: [hoja de ruta](roadmap.md).
 

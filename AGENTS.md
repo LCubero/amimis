@@ -15,7 +15,7 @@ plain static server.
 - `docs/harness-readiness.md`: technical baseline, constraints, and harness preparation.
 
 ## Install, Run, and Verify
-Use a Node.js version supported by Vite 7 (`^20.19.0 || >=22.12.0`).
+Work only on Linux (Fedora). Use a Node.js version supported by Vite 7 (`^20.19.0 || >=22.12.0`).
 
 ```bash
 npm ci
@@ -25,7 +25,7 @@ npm run build
 ```
 
 The app URL is `http://localhost:4173/amimis/`. The production base is `/amimis/`.
-For browser checks, follow the full Playwright setup and commands in `README.md`.
+For browser checks, follow the full Playwright setup and commands in `docs/desarrollo.md`.
 Run all five scripts: `visual-checks.js`, `preferences-contrast.js`,
 `mobile-editing.js`, `theme-reload.js`, and `wake-picker.js` under `tests/`.
 No npm test script or Jest/Vitest runner is configured. Build output is `dist/`.

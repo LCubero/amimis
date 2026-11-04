@@ -12,7 +12,8 @@
 | `current-state.md` | Estado verificado, trabajo reciente y siguiente paso |
 | `roadmap.md` | Registros canónicos del ciclo de vida para el trabajo pendiente y resuelto |
 | `decisions.md` | Decisiones y restricciones duraderas con evidencia |
-| `../../README.md` | Producto, instalación, pruebas de la app y despliegue |
+| `../../README.md` | Presentación pública del producto e inicio básico |
+| `../desarrollo.md` | Entorno, comandos, estructura, pruebas y publicación de la app |
 | `../../AGENTS.md` | Restricciones técnicas de Amimis y entrada para Pi |
 | `../../CHANGELOG.md` | Cambios completados, no planes |
 | `../harness-readiness.md` | Preparación histórica y evidencia anterior a la instalación |
